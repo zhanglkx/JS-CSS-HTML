@@ -15,24 +15,27 @@
 <p><strong>注意：</strong> Internet Explorer 9 及更早 IE 版本浏览器不支持 Web Workers.</p>
 
 <script>
-    var w;
+    let worker;
 
     function startWorker() {
-        if (typeof (Worker) !== "undefined") {
-            if (typeof (w) == "undefined") {
-                w = new Worker('webworker.js');
+        if (typeof (Worker) !== "undefined") { //首先检测浏览器对于 web worker 的支持性
+            if (typeof (worker) == "undefined") {
+                worker = new Worker('webworker.js');
             }
-            w.onmessage = function (event) {
+            worker.onmessage = function (event) {
                 document.getElementById("result").innerHTML = event.data;
             };
+            worker.onerror = function (err) {
+                console.log(err)
+            }
         } else {
             document.getElementById("result").innerHTML = "抱歉，你的浏览器不支持 Web Workers...";
         }
     }
 
     function stopWorker() {
-        w.terminate();
-        w = undefined;
+        worker.terminate(); //结束
+        worker = undefined;
     }
 </script>
 
