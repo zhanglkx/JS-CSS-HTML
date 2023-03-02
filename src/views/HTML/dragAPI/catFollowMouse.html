@@ -17,11 +17,12 @@
     </style>
 </head>
 <body>
+
 <h3>随着鼠标拖动而移动的小猫咪</h3>
-<img id="cat"
-     src="../../../assets/logo.png"
-     alt=""/>
+<img id="cat" src="../../../assets/logo.png" alt=""/>
+
 <script>
+    let x, y;
     var cat = document.getElementById('cat');
     cat.ondragstart = function (e) {
         console.log('cat开始移动');
@@ -30,8 +31,8 @@
     };
     cat.ondrag = function (e) {
         // console.log('事件源cat正在拖动中');
-        var x = e.pageX;
-        var y = e.pageY;
+        x = e.pageX;
+        y = e.pageY;
         console.log(x + '-' + y);
         if (x === 0 && y === 0) {//不处理最后一刻x,y都为0 的情景
             return
@@ -39,11 +40,13 @@
         ;
         x -= offsetX;
         y -= offsetY;
-        cat.style.left = x + 'px';
-        cat.style.top = y + 'px';
+
     }
     cat.ondragend = function (e) {
-        console.jlog('cat源对象拖动结束')
+        cat.style.left = x + 'px';
+        cat.style.top = y + 'px';
+        console.log(x + '-' + y);
+        console.log('===cat源对象拖动结束')
     }
 </script>
 </body>
