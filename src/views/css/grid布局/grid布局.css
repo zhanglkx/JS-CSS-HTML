@@ -11,7 +11,8 @@ span {
 .item {
     font-size: 2em;
     text-align: center;
-    border: 1px solid #e5e4e9;
+    border: 12px solid #e5e4e9;
+
 }
 
 .item-1 {
