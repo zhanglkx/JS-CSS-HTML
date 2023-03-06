@@ -28,15 +28,27 @@
 //     return result
 // }
 // 第三版
-Function.prototype.call2 = function (context) {
-    var context = context || window;
-    context.fn = this;
-
-    let arg = [...arguments].slice(1)
-    let result = context.fn(...arg)
-
-    delete context.fn
-    return result
+// Function.prototype.call2 = function (context) {
+//     var context = context || window;
+//     context.fn = this;
+//
+//     let arg = [...arguments].slice(1)
+//     let result = context.fn(...arg)
+//
+//     delete context.fn
+//     return result
+// }
+// es6版本
+Function.prototype.call2 = function (context, ...args) {
+    // 判断是否是undefined和null
+    if (typeof context === 'undefined' || context === null) {
+        context = window
+    }
+    let fnSymbol = Symbol()
+    context[fnSymbol] = this
+    let fn = context[fnSymbol](...args)
+    delete context[fnSymbol]
+    return fn
 }
 
 // 测试一下
