@@ -2,10 +2,12 @@
 Function.prototype.call2 = function (context) {
     var context = context || window;
     context.fn = this;
-    let arg = [...arguments].slice(1);
-    let result = context.fn(...arg);
-    delete context.fn;
-    return result;
+
+    let arg = [...arguments].slice(1)
+    let result = context.fn(...arg)
+
+    delete context.fn
+    return result
 }
 
 // 测试一下
