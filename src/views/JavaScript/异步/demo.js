@@ -11,5 +11,5 @@ async function fetchProducts() {
     }
 }
 
-const json = fetchProducts();
-console.log(json[0].name);   // json 是一个 Promise 对象，因此这句代码无法正常工作
+const jsonPromise = fetchProducts();
+jsonPromise.then((json) => console.log(json[0].name));
