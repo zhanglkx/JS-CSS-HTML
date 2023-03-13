@@ -27,6 +27,7 @@ class MyPromise {
 
 
     resolve(value) {
+        if (this.PromiseState === 'pending') return;
         // 如果执行resolve，状态变为fulfilled
         this.PromiseState = 'fulfilled'
         // 终值为传进来的值
@@ -34,6 +35,8 @@ class MyPromise {
     }
 
     reject(reason) {
+        if (this.PromiseState === 'pending') return;
+
         // 如果执行reject，状态变为rejected
         this.PromiseState = 'rejected'
         // 终值为传进来的reason
