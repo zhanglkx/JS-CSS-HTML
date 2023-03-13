@@ -9,8 +9,14 @@ class MyPromise {
         this.initValue()
         // 初始化this指向
         this.initBind()
-        // 执行传进来的函数
-        executor(this.resolve, this.reject)
+
+        try {
+            // 执行传进来的函数
+            executor(this.resolve, this.reject)
+        } catch (e) {
+            // 捕捉到错误直接执行reject
+            this.reject(e)
+        }
     }
 
     initValue() {
