@@ -23,6 +23,8 @@ class MyPromise {
         // 初始化值
         this.PromiseResult = null // 终值
         this.PromiseState = 'pending' // 状态
+        this.onFulfilledCallbacks = [];
+        this.onRejectedCallbacks = [];
     }
 
     initBind() {
@@ -38,16 +40,41 @@ class MyPromise {
         this.PromiseState = 'fulfilled'
         // 终值为传进来的值
         this.PromiseResult = value
+        if (this.onFulfilledCallbacks.length) {
+            //获取第一个元素，并执行传参this.PromiseState
+            this.onFulfilledCallbacks.shift()(this.PromiseState)
+        }
     }
 
     reject(reason) {
         if (this.PromiseState === 'pending') return;
-
         // 如果执行reject，状态变为rejected
         this.PromiseState = 'rejected'
         // 终值为传进来的reason
-        this.PromiseResult = reason
+        this.PromiseResult = reason;
+        if (this.onRejectedCallbacks.length) {
+            this.onRejectedCallbacks.shift()(this.PromiseState)
+        }
     }
+
+    then(onFulfilled, onRejected) {
+        onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : val => val;
+        onRejected = typeof onRejected === 'function' ? onRejected : reason => {
+            throw reason
+        };
+        if (this.PromiseState === 'fulfilled') {
+            onFulfilled(this.PromiseState)
+        } else if (this.PromiseState === 'rejected') {
+            onRejected(this.PromiseState)
+        } else if (this.PromiseState === 'pending') {
+            // 如果状态为待定状态，暂时保存两个回调
+            this.onFulfilledCallbacks.push(onFulfilled.bind(this))
+            this.onRejectedCallbacks.push(onRejected.bind(this))
+        }
+
+
+    }
+
 }
 
 const test1 = new MyPromise((resolve, reject) => {
