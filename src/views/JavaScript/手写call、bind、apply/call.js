@@ -51,6 +51,7 @@ Function.prototype.call2 = function (context, ...args) {
     return fn
 }
 
+
 // 测试一下
 var value = 2;
 
