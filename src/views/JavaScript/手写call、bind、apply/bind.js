@@ -1,31 +1,31 @@
 // 第二版
-Function.prototype.bind2 = function (context) {
-
-    var self = this;
-    // 获取bind2函数从第二个参数到最后一个参数
-    //Array.prototype.slice.call是将arguments类数组对象转换为数组 和[...arguments]作用一样
-    var args = Array.prototype.slice.call(arguments, 1);//Arguments(2) [Object, "daisy", Function, Function]
-    return function () {
-        // 这个时候的arguments是指bind返回的函数传入的参数
-        var bindArgs = Array.prototype.slice.call(arguments);
-        console.log(this, self);//this global,  self:function bar(name, age) {
-        return self.apply(context, args.concat(bindArgs));//Arguments(1) ["18", Function, Function]
-    }
-}
-
-var foo = {
-    value: 1
-};
-
-function bar(name, age) {
-    console.log(this.value);
-    console.log(name);
-    console.log(age);
-
-}
-
-var bindFoo = bar.bind2(foo, 'daisy');
-bindFoo('18');
+// Function.prototype.bind2 = function (context) {
+//
+//     var self = this;
+//     // 获取bind2函数从第二个参数到最后一个参数
+//     //Array.prototype.slice.call是将arguments类数组对象转换为数组 和[...arguments]作用一样
+//     var args = Array.prototype.slice.call(arguments, 1);//Arguments(2) [Object, "daisy", Function, Function]
+//     return function () {
+//         // 这个时候的arguments是指bind返回的函数传入的参数
+//         var bindArgs = Array.prototype.slice.call(arguments);
+//         console.log(this, self);//this global,  self:function bar(name, age) {
+//         return self.apply(context, args.concat(bindArgs));//Arguments(1) ["18", Function, Function]
+//     }
+// }
+//
+// var foo = {
+//     value: 1
+// };
+//
+// function bar(name, age) {
+//     console.log(this.value);
+//     console.log(name);
+//     console.log(age);
+//
+// }
+//
+// var bindFoo = bar.bind2(foo, 'daisy');
+// bindFoo('18');
 //========================
 // 第四版
 // var value = 2;
@@ -75,7 +75,15 @@ bindFoo('18');
  * 试着写一下
  */
 
-Function.prototype.bind3 = function (context) {
-    let slef = this;
-    let arg = Array.prototype.slice.call(arguments, 1);
+// Function.prototype.bind3 = function (context) {
+//     let slef = this;
+//     let arg = Array.prototype.slice.call(arguments, 1);
+// }
+
+/**
+ * rest参数
+ */
+
+Function.prototype.bind2 = function (context, ...arg) {
+
 }

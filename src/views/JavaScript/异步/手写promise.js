@@ -1,6 +1,3 @@
-/**
- * ddd
- */
 class MyPromise {
     // 构造方法
     constructor(executor) {
@@ -66,11 +63,15 @@ class MyPromise {
             throw reason
         }
 
-        const thenPromise = new MyPromise((resolve, reject) => {
+
+        var thenPromise = new MyPromise((resolve, reject) => {
+
+            //onFulfilled和onRejected都是函数了 cb是
             const resolvePromise = cb => {
                 try {
                     const x = cb(this.PromiseResult)
-                    if (x === thenPromise && x) {
+                    console.log(cb + '====' + x + '====' + this.PromiseResult)
+                    if (x === thenPromise) {
                         // 不能返回自身哦
                         throw new Error('不能返回自身。。。')
                     }
@@ -103,16 +104,21 @@ class MyPromise {
                 this.onFulfilledCallbacks.push(resolvePromise.bind(this, onFulfilled))
                 this.onRejectedCallbacks.push(resolvePromise.bind(this, onRejected))
             }
-        });
+        })
 
         // 返回这个包装的Promise
         return thenPromise
+
     }
 }
 
+const test3 = new MyPromise((resolve, reject) => {
+    resolve(100) // 输出 状态：success 值： 200
+}).then(res => 2 * res, err => 3 * err)
+    .then(res => console.log('success', res), err => console.log('fail', err))
 
-let test2 = new MyPromise((resolve, reject) => {
-    setTimeout(() => {
-        resolve('success') // 1秒后输出 success
-    }, 1000)
-}).then(res => console.log(res), err => console.log(err))
+
+const test4 = new MyPromise((resolve, reject) => {
+    resolve(100) // 输出 状态：fail 值：200
+}).then(res => new MyPromise((resolve, reject) => reject(2 * res)), err => new Promise((resolve, reject) => resolve(3 * err)))
+    .then(res => console.log('success', res), err => console.log('fail', err))
