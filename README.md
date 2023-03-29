@@ -1,4 +1,4 @@
-# zwvue
+# ts-learn
 
 ## Project setup
 ```

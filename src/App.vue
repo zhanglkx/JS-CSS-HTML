@@ -1,15 +1,44 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link>
-    |
-    <router-link to="/about">About</router-link>
-    |
-    <router-link to="/meta">meta</router-link>
-  </nav>
-  <router-view/>
-</template>
+  <div class="main">
+    <div class="stage">
+      <!--snake内部的div 表示蛇的各部分-->
+      <div></div>
 
-<style>
+      <!--  设置食物-->
+      <div class="food">
+        <!--添加四个小div 来设置食物的样式-->
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+    </div>
+    <div class="score-panel">
+      <div class="score">
+        <div>
+          SCORE: <span class="score">0</span>
+        </div>
+        <div>
+          LEVEL: <span class="level">1</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</template>
+<script lang="ts">
+import {defineComponent} from 'vue';
+
+export default defineComponent({
+  name: 'HomeView',
+  components: {
+    // HelloWorld,
+  },
+});
+</script>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,16 +47,5 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
-}
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
