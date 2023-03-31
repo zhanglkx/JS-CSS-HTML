@@ -1,6 +1,6 @@
 // second.js
-let name = 'Zaptec';
+let name = "Zaptec";
 
 function greeting() {
-    alert('Our company is called ' + name + '.');
+  alert("Our company is called " + name + ".");
 }

@@ -1,21 +1,20 @@
 var value = 1;
 
 var foo = {
-    value: 2,
-    bar: function () {
-        console.log(22222)
-        return this.value;
-    }
-}
+  value: 2,
+  bar: function() {
+    console.log(22222);
+    return this.value;
+  }
+};
 
-var val = 3
+var val = 3;
 var foo1 = {
-    val: 4,
-    bar: function () {
-        return this.val;
-    }
-}
-
+  val: 4,
+  bar: function() {
+    return this.val;
+  }
+};
 
 //示例3
 // console.log((foo.bar =  foo1.bar)()); //执行的是后面的这个foo1.bar

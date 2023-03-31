@@ -39,38 +39,37 @@
 //     return result
 // }
 // es6版本
-Function.prototype.call2 = function (context, ...args) {
-    // 判断是否是undefined和null
-    if (typeof context === 'undefined' || context === null) {
-        context = window
-    }
-    let fnSymbol = Symbol()
-    context[fnSymbol] = this
-    let fn = context[fnSymbol](...args)
-    delete context[fnSymbol]
-    return fn
-}
-
+Function.prototype.call2 = function(context, ...args) {
+  // 判断是否是undefined和null
+  if (typeof context === "undefined" || context === null) {
+    context = window;
+  }
+  let fnSymbol = Symbol();
+  context[fnSymbol] = this;
+  let fn = context[fnSymbol](...args);
+  delete context[fnSymbol];
+  return fn;
+};
 
 // 测试一下
 var value = 2;
 
 var obj = {
-    value: 1
-}
+  value: 1
+};
 
 function bar(name, age) {
-    console.log(this.value);
-    return {
-        value: this.value,
-        name: name,
-        age: age
-    }
+  console.log(this.value);
+  return {
+    value: this.value,
+    name: name,
+    age: age
+  };
 }
 
 bar.call2(null); // 2
 
-console.log(bar.call2(obj, 'kevin', 18));
+console.log(bar.call2(obj, "kevin", 18));
 // 1
 // Object {
 //    value: 1,
@@ -82,13 +81,13 @@ console.log(bar.call2(obj, 'kevin', 18));
 var value = 2;
 
 var obj = {
-    value: 1
-}
+  value: 1
+};
 
 function bar() {
-    console.log(this.value);
+  console.log(this.value);
 }
 
 bar.call2(null); // 2
 
-console.log(bar.call2(obj, 'kevin', 18));
+console.log(bar.call2(obj, "kevin", 18));

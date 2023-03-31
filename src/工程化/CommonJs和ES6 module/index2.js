@@ -1,5 +1,5 @@
-import {name} from './indexs';
+import { name } from "./indexs";
 
 export const log = () => {
-    console.log(name);
+  console.log(name);
 };

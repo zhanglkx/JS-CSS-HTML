@@ -1,7 +1,6 @@
 //例一，在模块外为简单类型赋值： b.js
 // const {val, setVal} = require('./a.js')
-import {val, setVal} from './a'
-
+import { val, setVal } from "./a";
 
 console.log(val);
 
@@ -46,5 +45,3 @@ console.log(val);
 // setTimeout(() => {
 //     console.log(a);
 // }, 200)
-
-

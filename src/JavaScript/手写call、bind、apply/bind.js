@@ -84,6 +84,5 @@
  * rest参数
  */
 
-Function.prototype.bind2 = function (context, ...arg) {
-
-}
+Function.prototype.bind2 = function(context, ...arg) {
+};

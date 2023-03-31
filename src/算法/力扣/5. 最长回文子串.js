@@ -45,8 +45,8 @@
  * 方案一：未成功，原因，仅考虑到长度为奇数的最长回文串
  */
 
-let example1 = 'babad';
-let example2 = 'cbbd';
+let example1 = "babad";
+let example2 = "cbbd";
 
 // let maxLen = 0, tempLen = 0;
 
@@ -85,7 +85,7 @@ let example2 = 'cbbd';
 //     return strLen;
 // }
 
-console.log("最长回文子串")
+console.log("最长回文子串");
 console.log(longestPalindrome(example1));
 console.log(longestPalindrome(example2));
 /**
@@ -96,24 +96,26 @@ console.log(longestPalindrome(example2));
  */
 console.log(longestPalindrome(example2));
 
-
 var longestPalindrome = function (s) {
+  let maxLen = 0,
+    starIndex = 0,
+    tempLen = 0;
+  let strLen = s.length;
+  let DPArray = new Array(s.length + 1)
+    .fill(0)
+    .map(() => new Array(s.length + 1).fill(0));
 
-    let maxLen = 0, starIndex = 0, tempLen = 0;
-    let strLen = s.length;
-    let DPArray = new Array(s.length + 1).fill(0).map(() => new Array(s.length + 1).fill(0));
-
-
-    for (let rightIndex = 1; rightIndex < s.length; rightIndex++) {
-        for (let leftIndex = 0; leftIndex < array.length; leftIndex++) {
-            if (s[leftIndex] === s[rightIndex] && (s[leftIndex + 1] === s[rightIndex - 1] || rightIndex - leftIndex <= 2)) {
-                starIndex = leftIndex;
-                tempLen = rightIndex - leftIndex;
-
-            }
-
-        }
-        maxLen = tempLen > maxLen ? tempLen : maxLen;
+  for (let rightIndex = 1; rightIndex < s.length; rightIndex++) {
+    for (let leftIndex = 0; leftIndex < array.length; leftIndex++) {
+      if (
+        s[leftIndex] === s[rightIndex] &&
+        (s[leftIndex + 1] === s[rightIndex - 1] || rightIndex - leftIndex <= 2)
+      ) {
+        starIndex = leftIndex;
+        tempLen = rightIndex - leftIndex;
+      }
     }
-    return maxLen;
+    maxLen = tempLen > maxLen ? tempLen : maxLen;
+  }
+  return maxLen;
 };

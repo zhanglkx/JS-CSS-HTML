@@ -188,29 +188,26 @@
 /** ********************************************************************************************************************** **/
 
 function unknownSum() {
-    // 存储每次函数调用时的参数
-    let arr = [];
-    const add = (...params) => {
-        // 拼接新参数
-        arr = arr.concat(params);
-        return add;
-    };
-
-    // 对参数进行求和
-    add.toString = function () {
-        let result = 0;
-        // 对arr中的元素进行求和
-        for (let i = 0; i < arr.length; i++) {
-            result += arr[i];
-        }
-        return result + "";
-    };
-
+  // 存储每次函数调用时的参数
+  let arr = [];
+  const add = (...params) => {
+    // 拼接新参数
+    arr = arr.concat(params);
     return add;
+  };
+
+  // 对参数进行求和
+  add.toString = function() {
+    let result = 0;
+    // 对arr中的元素进行求和
+    for (let i = 0; i < arr.length; i++) {
+      result += arr[i];
+    }
+    return result + "";
+  };
+
+  return add;
 }
 
 const result1 = unknownSum()(1, 6, 7, 8)(2)(3)(4);
 console.log("result1 =", result1.toString());
-
-
-

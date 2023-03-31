@@ -3,16 +3,16 @@
 let val = 1;
 
 const setVal = (newVal) => {
-    val = newVal
-}
+  val = newVal;
+};
 
 module.exports = {
-    val,
-    setVal
-}
+  val,
+  setVal
+};
 
 // b.js
-const {val, setVal} = require('./a.js')
+const { val, setVal } = require("./a.js");
 
 console.log(val);
 

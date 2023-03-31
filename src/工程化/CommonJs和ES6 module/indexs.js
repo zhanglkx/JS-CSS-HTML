@@ -1,4 +1,4 @@
-import {log} from './index2';
+import { log } from "./index2";
 
-export const name = 'index';
+export const name = "index";
 log();

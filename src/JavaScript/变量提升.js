@@ -1,5 +1,5 @@
-let a = 1
+let a = 1;
 {
-    a = 2
-    let a
+  a = 2;
+  let a;
 }

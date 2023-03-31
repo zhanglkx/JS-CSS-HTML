@@ -2,8 +2,8 @@
 export let val = 1;
 
 export const setVal = (newVal) => {
-    val = newVal
-}
+  val = newVal;
+};
 
 // module.exports = {
 //     val,
@@ -179,8 +179,3 @@ export const setVal = (newVal) => {
 // setTimeout(() => {
 //     console.log(useA);
 // }, 200)
-
-
-
-
-
