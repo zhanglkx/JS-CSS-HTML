@@ -1,4 +1,4 @@
-# ts-learn
+# ts-demo
 
 ## Project setup
 ```
