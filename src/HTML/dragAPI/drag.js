@@ -114,15 +114,15 @@ class Drag {
 
   startDrag() {
     // 鼠标按下事件 => 开始锁定
-    this.moveTarget.onmousedown = function(e) {
+    this.moveTarget.onmousedown = function (e) {
       this.mouseDown(e);
     }.bind(this);
     // 鼠标移动事件 => 开始拖拽
-    this.moveTarget.onmousemove = function(e) {
+    this.moveTarget.onmousemove = function (e) {
       this.mouseMove(e);
     }.bind(this);
     // 鼠标释放事件 => 释放锁定
-    this.moveTarget.onmouseup = function(e) {
+    this.moveTarget.onmouseup = function (e) {
       this.mouseUp(e);
     }.bind(this);
   }

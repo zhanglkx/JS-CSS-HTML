@@ -39,7 +39,7 @@
 //     return result
 // }
 // es6版本
-Function.prototype.call2 = function(context, ...args) {
+Function.prototype.call2 = function (context, ...args) {
   // 判断是否是undefined和null
   if (typeof context === "undefined" || context === null) {
     context = window;
@@ -55,7 +55,7 @@ Function.prototype.call2 = function(context, ...args) {
 var value = 2;
 
 var obj = {
-  value: 1
+  value: 1,
 };
 
 function bar(name, age) {
@@ -63,7 +63,7 @@ function bar(name, age) {
   return {
     value: this.value,
     name: name,
-    age: age
+    age: age,
   };
 }
 
@@ -81,7 +81,7 @@ console.log(bar.call2(obj, "kevin", 18));
 var value = 2;
 
 var obj = {
-  value: 1
+  value: 1,
 };
 
 function bar() {

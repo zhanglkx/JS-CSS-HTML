@@ -2,18 +2,18 @@ var value = 1;
 
 var foo = {
   value: 2,
-  bar: function() {
+  bar: function () {
     console.log(22222);
     return this.value;
-  }
+  },
 };
 
 var val = 3;
 var foo1 = {
   val: 4,
-  bar: function() {
+  bar: function () {
     return this.val;
-  }
+  },
 };
 
 //示例3

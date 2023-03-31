@@ -1,5 +1,4 @@
-function Person() {
-}
+function Person() {}
 
 let person = new Person();
 person.__proto__.name = "hhh";

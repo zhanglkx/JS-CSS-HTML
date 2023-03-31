@@ -1,4 +1,4 @@
-Function.prototype.call2 = function(conntext) {
+Function.prototype.call2 = function (conntext) {
   var context = context || window;
   conntext.fn = this;
   arr = [...arguments];

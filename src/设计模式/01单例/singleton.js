@@ -2,16 +2,16 @@
  * 简单的单例
  */
 
-let Singleton1 = function(name) {
+let Singleton1 = function (name) {
   this.name = name;
   this.instance = null;
 };
 
-Singleton1.prototype.getName = function() {
+Singleton1.prototype.getName = function () {
   console.log(this.name);
 };
 
-Singleton1.getInstance = function(name) {
+Singleton1.getInstance = function (name) {
   if (this.instance) {
     return this.instance;
   }
@@ -30,7 +30,7 @@ Singleton1.getInstance = function(name) {
  */
 let CreateSingleton = (function () {
   let instance;
-  return function(name) {
+  return function (name) {
     if (instance) {
       return instance;
     }
@@ -38,7 +38,7 @@ let CreateSingleton = (function () {
     return (instance = this);
   };
 })();
-CreateSingleton.prototype.getName = function() {
+CreateSingleton.prototype.getName = function () {
   console.log(this.name);
 };
 
@@ -53,7 +53,7 @@ CreateSingleton.prototype.getName = function() {
  */
 let ProxyCreateSingleton = (function () {
   let instance;
-  return function(name) {
+  return function (name) {
     // 代理函数仅作管控单例
     if (instance) {
       return instance;
@@ -63,10 +63,10 @@ let ProxyCreateSingleton = (function () {
 })();
 
 // 独立的Singleton类，处理对象实例
-let Singleton = function(name) {
+let Singleton = function (name) {
   this.name = name;
 };
-Singleton.prototype.getName = function() {
+Singleton.prototype.getName = function () {
   console.log(this.name);
 };
 
@@ -80,13 +80,13 @@ console.log(Looser.getName()); // 'Winner'
 /**
  * 懒加载的单例
  */
-let getSingleton = function(fn) {
+let getSingleton = function (fn) {
   var result;
-  return function() {
+  return function () {
     return result || (result = fn.apply(this, arguments)); // 确定this上下文并传递参数
   };
 };
-let createAlertMessage = function(html) {
+let createAlertMessage = function (html) {
   var div = document.createElement("div");
   div.innerHTML = html;
   div.style.display = "none";
@@ -95,7 +95,7 @@ let createAlertMessage = function(html) {
 };
 
 let createSingleAlertMessage = getSingleton(createAlertMessage);
-document.body.addEventListener("click", function() {
+document.body.addEventListener("click", function () {
   // 多次点击只会产生一个弹窗
   let alertMessage = createSingleAlertMessage("您的知识需要付费充值！");
   alertMessage.style.display = "block";

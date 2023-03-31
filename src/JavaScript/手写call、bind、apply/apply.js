@@ -1,5 +1,5 @@
 //v1
-Function.prototype.apply1 = function(context, arg) {
+Function.prototype.apply1 = function (context, arg) {
   if (typeof context === "undefined" || context === null) {
     context = window;
   }
@@ -17,7 +17,7 @@ Function.prototype.apply1 = function(context, arg) {
 };
 
 //v2
-Function.prototype.apply2 = function(context, arg) {
+Function.prototype.apply2 = function (context, arg) {
   if (typeof context === "undefined" || context === null) {
     context = window;
   }

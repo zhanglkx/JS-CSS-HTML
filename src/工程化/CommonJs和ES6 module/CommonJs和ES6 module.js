@@ -8,7 +8,7 @@ const setVal = (newVal) => {
 
 module.exports = {
   val,
-  setVal
+  setVal,
 };
 
 // b.js

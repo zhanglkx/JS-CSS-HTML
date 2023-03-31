@@ -63,8 +63,8 @@ class MyPromise {
       typeof onRejected === "function"
         ? onRejected
         : (reason) => {
-          throw reason;
-        };
+            throw reason;
+          };
 
     var thenPromise = new MyPromise((resolve, reject) => {
       //onFulfilled和onRejected都是函数了 cb是

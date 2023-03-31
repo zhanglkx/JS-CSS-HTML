@@ -197,7 +197,7 @@ function unknownSum() {
   };
 
   // 对参数进行求和
-  add.toString = function() {
+  add.toString = function () {
     let result = 0;
     // 对arr中的元素进行求和
     for (let i = 0; i < arr.length; i++) {
