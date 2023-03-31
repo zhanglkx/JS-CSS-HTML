@@ -1,6 +1,9 @@
 <template>
-  <button>点击{{ papa.count }}</button>
-  <div>{{ papa.count }}</div>
+  <div>
+    <button>点击{{ papa.count }}</button>
+    <div>{{ papa.count }}</div>
+  </div>
+
 </template>
 
 <script setup>
