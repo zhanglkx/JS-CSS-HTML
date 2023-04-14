@@ -96,7 +96,7 @@ console.log(longestPalindrome(example2));
  */
 console.log(longestPalindrome(example2));
 
-var longestPalindrome = function (s) {
+var longestPalindrome = function(s) {
   let maxLen = 0,
     starIndex = 0,
     tempLen = 0;
@@ -106,7 +106,7 @@ var longestPalindrome = function (s) {
     .map(() => new Array(s.length + 1).fill(0));
 
   for (let rightIndex = 1; rightIndex < s.length; rightIndex++) {
-    for (let leftIndex = 0; leftIndex < array.length; leftIndex++) {
+    for (let leftIndex = 0; leftIndex < DPArray.length; leftIndex++) {
       if (
         s[leftIndex] === s[rightIndex] &&
         (s[leftIndex + 1] === s[rightIndex - 1] || rightIndex - leftIndex <= 2)
