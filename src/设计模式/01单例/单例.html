@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>单例</title>
+</head>
+<body>
+<h1>斤斤计较</h1>
+<script>
+  //  方法一
+  const Singleton1 = function(name) {
+    this.name = name;
+    this.instance = null;
+  };
+  Singleton1.prototype.getName = function() {
+    return this.name;
+  };
+  Singleton1.getInstance = function(name) {
+    if (!this.instance) {
+      this.instance = new Singleton1(name);
+    }
+    return this.instance;
+  };
+</script>
+
+
+<script>
+  // 测试
+  const s3 = Singleton.getInstance("this is a singleton");
+  const s4 = Singleton.getInstance("this is another singleton");
+  console.log(s3 === s4); // true
+  console.log(s3.getName()); // this is a singleton
+  console.log(s4.getName()); // this is another singleton
+
+</script>
+
+
+</body>
+</html>
