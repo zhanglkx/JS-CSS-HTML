@@ -7,7 +7,6 @@ interface pageInterface {
   name: string,
   nickName: string,
   path: string
-
 }
 
 const sentValue2Son: pageInterface = {
