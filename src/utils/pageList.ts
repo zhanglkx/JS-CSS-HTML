@@ -13,6 +13,7 @@ const sentValue2Son: pageInterface = {
   name: "sentValue2Son",
   nickName: "父子传值",
   path: "sentValue2Son"
+
 };
 
 pageMap.set("sentValue2Son", sentValue2Son);
