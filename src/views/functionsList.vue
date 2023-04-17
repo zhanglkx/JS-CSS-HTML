@@ -1,5 +1,9 @@
 <template>
   <div class="wrapper">
+
+<!--    <router-link to="/贪吃蛇/subComponent">11</router-link>-->
+    <router-view></router-view>
+
     <ul class="list">
       <li class="list_li" v-for="(item, index) in 100" :key="index">
         <a-button
@@ -21,7 +25,7 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 
 const jump = () => {
-  router.push("mixin");
+  router.push({ name: "subComponent" });
 };
 </script>
 

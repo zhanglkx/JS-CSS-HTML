@@ -2,3 +2,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*设置全局路由选中样式*/
+.router-active{
+    background: #c4d7d0;
+}

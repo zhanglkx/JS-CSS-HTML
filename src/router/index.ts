@@ -10,21 +10,18 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/about",
     name: "about",
-    component: () =>
-      import("../views/AboutView.vue")
+    component: () => import("../views/AboutView.vue")
   },
-
   {
     path: "/functionsList",
     name: "functionsList",
-    component: () =>
-      import("../views/functionsList.vue"),
+    meta: { title: "功能列表" },
+    component: () => import("../views/functionsList.vue"),
     children: [
       {
-        path: "/mixin",
-        name: "mixin",
-        component: () =>
-          import("../Vue/mixinDirectory/mixinLearn.vue")
+        path: "/贪吃蛇/subComponent",
+        name: "subComponent",
+        component: () => import("../views/贪吃蛇/subRouter/subComponent.vue")
       }
     ]
   }
@@ -32,6 +29,8 @@ const routes: Array<RouteRecordRaw> = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
+  // 匹配当前路由的 RouterLink 默认的 CSS class。如果没有提供，则会使用
+  linkActiveClass: "router-active",
   routes
 });
 
