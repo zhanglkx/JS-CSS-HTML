@@ -17,7 +17,6 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/functionsList",
     name: "functionsList",
-    redirect:'/functionsList/mixin',
     component: () =>
       import("../views/functionsList.vue"),
     children: [
