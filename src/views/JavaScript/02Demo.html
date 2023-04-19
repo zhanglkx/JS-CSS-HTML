@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+<script>
+    /*累加器*/
+    let n = Number(prompt("请输入数字 n"));
+    let sum = 0;
+    for (let i = 2; i <= n; i++) {
+        sum = (n + 1) / n + sum;
+    }
+    alert(sum);
+
+    let nn = Number(prompt("请输入莱布尼茨级数 n "));
+    let sum1 = 0;
+    let item = 1;
+
+    for (let i = 1; i <= nn; i++) {
+
+        item *= i / (2 * i + 1);
+        sum1 += item;
+    }
+
+    alert((sum1 + 1) * 2);
+
+</script>
+</body>
+</html>

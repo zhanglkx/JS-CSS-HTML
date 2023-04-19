@@ -21,7 +21,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: "/贪吃蛇/subComponent",
         name: "subComponent",
-        component: () => import("../views/贪吃蛇/subRouter/subComponent.vue")
+        component: () => import("@/views/01demos/贪吃蛇/subRouter/subComponent.vue")
       }
     ]
   }
