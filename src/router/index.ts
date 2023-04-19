@@ -29,6 +29,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/01demos/Snake/subRouter/subComponent.vue")
       },
     ]
+  },
+  {
+    path: "/metaLearn/:postId",
+    name: "metaLearn",
+    component: () => import("@/views/V-router/metaLearn.vue")
   }
 ];
 

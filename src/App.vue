@@ -6,6 +6,8 @@
       <router-link to="/about">About</router-link>
       |
       <router-link to="/functionsList">functionsList</router-link>
+      |
+      <router-link to="/metaLearn/1">动态路由</router-link>
     </nav>
     <router-view />
   </div>
@@ -33,3 +35,5 @@ nav {
   }
 }
 </style>
+<script setup lang="ts">
+</script>
