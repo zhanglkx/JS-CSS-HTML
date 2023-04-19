@@ -25,7 +25,8 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 
 const jump = () => {
-  router.push({ name: "metaLearn" });
+  // router.push({ name: "subComponent" }); 命名路由方式
+  router.push({ path: '/Snake/subComponent' });//编程导航方式
 };
 </script>
 
