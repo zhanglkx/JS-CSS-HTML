@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+</head>
+<style>
+
+    .square {
+        width: 200px;
+        height: 200px;
+        background-color: #0a8ab6;
+    }
+
+</style>
+<body>
+
+
+<script>
+    /**这是typescript的写法，在JavaScript里面是错误的
+     *     function fun(a:string,b:string){
+     *         console.log(ad, addd);
+     *     };
+     *     fun(11, 'wds');
+     */
+
+    $(document).ready(function () {
+        $('#test-btn').click(function () {
+            $('#test').hide();
+            $('.tests').hide();
+            $('span').hide();
+            $(this).hide();//选取当前html元素，也就是按钮
+        });
+
+        $('#showBtn').click(function () {
+            $('#square').show(1000, 'swing', function () {
+                console.log('show完成')
+            });
+        });
+
+        $('#hideBtn').click(function () {
+            $("div").hide(1000, "linear", function () {
+                alert("Hide() 方法已完成!");
+            });
+        });
+
+        $('#toggleBtn').click(function () {
+            $("div").toggle(1000, 'linear', function () {
+                alert("toggle() 方法已完成!");
+            });
+        });
+    });
+</script>
+
+
+<!--<script>-->
+<!--    /**-->
+<!--     * 宏任务与微任务栗子🌰-->
+<!--     * 下面的代码在node和chrome环境的正确打印顺序是 3 5 7 4 6 8 1 2-->
+<!--     *-->
+<!--     * 全部代码在解析后加入执行栈-->
+<!--     * 执行（1），宏任务，调用webapi setTimeout，这个方法会在100ms后将回调函数放入宏任务的任务队列-->
+<!--     * 执行（2），同（1），但是会比（1）稍后一点-->
+<!--     * 执行（3），同步执行new Promise，然后执行（4），直接打印 3 ，然后resolve(4)，然后.then()，把（5）放入微任务的任务队列-->
+<!--     * 执行（6），同上，先打印 5 ，再执行resolve(6)，然后.then()里面的内容（8）加入到微任务的任务队列-->
+<!--     * 执行（9），同步代码，直接打印 7-->
+<!--     * 执行（10），同（1）和（2），只是时间更短，会在 50ms 后将回调 console.log(8) 加入宏任务的任务队列-->
+<!--     * 现在执行栈清空了，开始检查微任务队列，发现（5），加入到执行栈执行，是同步代码，直接打印 4-->
+<!--     * 任务队列又执行完了，又检查微任务队列，发现（8），打印 6-->
+<!--     * 任务队列又执行完了，检查微任务队列，没有任务，再检查宏任务队列，此时如果超过了50ms的话，会发现 console.log(8) 在宏任务队列中，于是执行 打印 8-->
+<!--     * 依次打印 1 2-->
+<!--     */-->
+<!--    setTimeout(() => {-->
+<!--        console.log(1)-->
+<!--    }, 100)-->
+
+<!--    //（2）-->
+<!--    setTimeout(() => {-->
+<!--        console.log(2)-->
+<!--    }, 100)-->
+
+<!--    //（3）-->
+<!--    new Promise(function (resolve, reject) {-->
+<!--        //（4）-->
+<!--        console.log(3)-->
+<!--        resolve(4)-->
+<!--    }).then(function (val) {-->
+<!--        //（5）-->
+<!--        console.log(val);-->
+<!--    })-->
+
+<!--    //（6）-->
+<!--    new Promise(function (resolve, reject) {-->
+<!--        //（7）-->
+<!--        console.log(5)-->
+<!--        resolve(6)-->
+<!--    }).then(function (val) {-->
+<!--        //（8）-->
+<!--        console.log(val);-->
+<!--    })-->
+
+<!--    //（9）-->
+<!--    console.log(7)-->
+
+<!--    //（10）-->
+<!--    setTimeout(() => {-->
+<!--        console.log(8)-->
+<!--    }, 50)-->
+
+<!--</script>-->
+
+<script>
+    // new Promise(resolve => {
+    //     resolve(4);
+    // }).then(res => {
+    //     // resolve(3);
+    //     console.log(res)
+    //     return 3;
+    // }).then(res=>{
+    //     console.log(res)
+    // })
+
+
+</script>
+
+<script>
+    //如果传入的 value 本身就是 Promise 对象，则该对象作为 Promise.resolve 方法的返回值返回。
+    function fn(resolve) {
+        setTimeout(function () {
+            resolve(123);
+            console.log(resolve(123) + ' resolve(123)');
+        }, 3000);
+    }
+
+    let p0 = new Promise(fn);
+    let p1 = Promise.resolve(p0);
+
+    console.log(p0, p1, fn);
+    // 返回为true，返回的 Promise 即是 入参的 Promise 对象。
+    console.log(p0 === p1);  //true
+    console.log(fn === p1);  //false
+</script>
+
+
+<h2>这是一个标题</h2>
+<p class="tests">这是一个段落</p>
+<p id="test">这是另外一个段落</p>
+<span id="test">这是另外一个span段落</span>
+<br><br><br>
+
+<button id="test-btn">点我</button>
+<br><br><br>
+<div class="square" id="square"></div>
+<br><br><br>
+
+<button id="showBtn">显示</button>
+<button id="hideBtn">隐藏</button>
+<button id="toggleBtn">toggleBtn</button>
+</body>
+</html>
