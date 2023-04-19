@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
 
-    <router-link to="/functionsList/Snake/subComponent">11</router-link>
+    <router-link to="/Snake/subComponent">11</router-link>
     <router-view></router-view>
 
     <ul class="list">

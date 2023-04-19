@@ -22,12 +22,7 @@ const routes: Array<RouteRecordRaw> = [
         path: "/Snake/subComponent",
         name: "subComponent",
         component: () => import("@/views/01demos/Snake/subRouter/subComponent.vue")
-      },
-      {
-        path: "/Snake/subComponent",
-        name: "subComponent",
-        component: () => import("@/views/01demos/Snake/subRouter/subComponent.vue")
-      },
+      }
     ]
   },
   {
