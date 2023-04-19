@@ -19,10 +19,15 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/functionsList.vue"),
     children: [
       {
-        path: "/贪吃蛇/subComponent",
+        path: "/Snake/subComponent",
         name: "subComponent",
-        component: () => import("@/views/01demos/贪吃蛇/subRouter/subComponent.vue")
-      }
+        component: () => import("@/views/01demos/Snake/subRouter/subComponent.vue")
+      },
+      {
+        path: "/Snake/subComponent",
+        name: "subComponent",
+        component: () => import("@/views/01demos/Snake/subRouter/subComponent.vue")
+      },
     ]
   }
 ];
