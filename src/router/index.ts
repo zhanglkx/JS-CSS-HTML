@@ -17,6 +17,7 @@ const routes: Array<RouteRecordRaw> = [
     path: "/functionsList",
     name: "functionsList",
     meta: { title: "功能列表" },
+    redirect:'/Snake/subComponent',
     component: () => import("../views/functionsList.vue"),
     children: [
       {

@@ -2,7 +2,7 @@
   <son :count="count"></son>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import Son from "@/views/Vue/组件之间传值/父>子 1/son.vue";
 

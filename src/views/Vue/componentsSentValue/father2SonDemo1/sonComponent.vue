@@ -2,11 +2,12 @@
   <div>
     <button>点击{{ papa.count }}</button>
     <div>{{ papa.count }}</div>
+
   </div>
 
 </template>
 
-<script setup>
+<script setup >
 import { watchEffect } from "vue";
 
 const papa = defineProps({ count });
