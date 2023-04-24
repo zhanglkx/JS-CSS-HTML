@@ -5,6 +5,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home",
+    meta: { title: "首页" },
     component: HomeView
   },
   {
@@ -22,6 +23,11 @@ const routes: Array<RouteRecordRaw> = [
         path: "/Snake/subComponent",
         name: "subComponent",
         component: () => import("@/views/01demos/Snake/subRouter/subComponent.vue")
+      },
+      {
+        path: "/transmission/farther2Son",
+        name: "farther2Son",
+        component: () => import("@/views/Vue/componentsSentValue/Father-SonTransmission/fatherComponent.vue")
       }
     ]
   },

@@ -1,4 +1,4 @@
-const Drag = [{
+const componentConfig = [{
   name: "subComponent",
   nickName: "贪吃蛇",
   route: "/functionsList/Snake/subComponent"
@@ -10,4 +10,4 @@ const Drag = [{
   }
 ];
 
-export  Drag;
+export default  componentConfig;
