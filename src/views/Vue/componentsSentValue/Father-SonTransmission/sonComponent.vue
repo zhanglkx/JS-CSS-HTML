@@ -1,6 +1,6 @@
 <template>
   <div class="blog-post">
-    <h4>{{ title }}</h4>
+    <h4>名字：{{ title }}</h4>
     <a-button @click="$emit('enlarge-text')">Enlarge text</a-button>
   </div>
 </template>

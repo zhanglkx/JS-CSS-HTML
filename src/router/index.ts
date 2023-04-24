@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
     path: "/functionsList",
     name: "functionsList",
     meta: { title: "功能列表" },
-    redirect:'/Snake/subComponent',
+    redirect: "/Snake/subComponent",
     component: () => import("../views/functionsList.vue"),
     children: [
       {
@@ -29,6 +29,16 @@ const routes: Array<RouteRecordRaw> = [
         path: "/transmission/farther2Son",
         name: "farther2Son",
         component: () => import("@/views/Vue/componentsSentValue/Father-SonTransmission/fatherComponent.vue")
+      },
+      {
+        path: "/transmission/farther2SonValue",
+        name: "farther2SonValue",
+        component: () => import("@/views/Vue/componentsSentValue/father2SonDemo1/fartherComponent.vue")
+      },
+      {
+        path: "/Vue/mixinDirectory",
+        name: "mixinDirectory",
+        component: () => import("@/views/Vue/mixinDirectory/mixinLearn.vue")
       }
     ]
   },

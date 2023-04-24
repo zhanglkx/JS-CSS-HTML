@@ -1,10 +1,17 @@
 <template>
-  <son :count="count"></son>
+  <div class="wrapper">
+    <sonComponent style="font-size: 30px" :count="count"></sonComponent>
+  </div>
+
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-import Son from "@/views/Vue/组件之间传值/父>子 1/son.vue";
+import SonComponent from "@/views/Vue/componentsSentValue/father2SonDemo1/sonComponent.vue";
+
+/**
+ * 2秒后，子父组件数据改变，子组件发生相应变化
+ */
 
 const count = ref(0);
 
