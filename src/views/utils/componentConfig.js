@@ -1,15 +1,14 @@
 const componentConfig = {
-  subComponent: {
-    name: "subComponent",
-    nickName: "贪吃蛇",
-    route: "/Snake/subComponent"
-  },
   farther2Son: {
-    name: "farther2Son",
-    nickName: "父子相互传参",
-    route: "/transmission/farther2Son"
+    index: 0, name: "farther2Son", nickName: "父子相互传参", route: "/transmission/farther2Son"
   }
 };
+
+const routerConfig = [{
+  index: 0, name: "farther2Son", nickName: "父子相互传参", route: "/transmission/farther2Son"
+}, {
+  index: 1, name: "farther2Son", nickName: "父子相互传参", route: "/transmission/farther2Son"
+}];
 
 /**
  * 代理单例--未使用
@@ -36,6 +35,5 @@ const proxyMode = (function() {
   };
 })();
 
-
-
+export {routerConfig};
 export default componentConfig;
