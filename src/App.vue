@@ -9,6 +9,13 @@
       |
       <router-link to="/metaLearn/1">动态路由</router-link>
     </nav>
+    <div class="fixed-button">
+      <a-button
+        class="backStyle"
+        @click="pageBack"
+      >返回
+      </a-button>
+    </div>
     <router-view />
   </div>
 </template>
@@ -20,6 +27,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  position: relative;
 }
 
 nav {
@@ -34,6 +42,23 @@ nav {
     }
   }
 }
+
+.fixed-button {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+}
 </style>
 <script setup lang="ts">
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+/**
+ * 路由返回
+ */
+const pageBack = () => {
+  router.back();
+};
+
+
 </script>
