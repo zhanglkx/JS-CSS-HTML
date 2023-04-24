@@ -11,7 +11,9 @@
     </nav>
     <div class="fixed-button">
       <a-button
-        class="backStyle"
+        style="border-radius: 10px"
+        type="primary"
+        size="large"
         @click="pageBack"
       >返回
       </a-button>
