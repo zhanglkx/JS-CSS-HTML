@@ -39,6 +39,11 @@ const routes: Array<RouteRecordRaw> = [
         path: "/Vue/mixinDirectory",
         name: "mixinDirectory",
         component: () => import("@/views/Vue/mixinDirectory/mixinLearn.vue")
+      },
+      {
+        path: "/component/charts/echartsMinimizeDemo",
+        name: "echartsMinimizeDemo",
+        component: () => import("@/views/component/charts/echartsMinimizeDemo.vue")
       }
     ]
   },

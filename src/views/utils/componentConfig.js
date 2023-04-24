@@ -8,6 +8,7 @@ const routerConfig = [
   { index: 0, name: "farther2Son", nickName: "父子相互传参", route: "/transmission/farther2Son" },
   { index: 1, name: "farther2SonValue", nickName: "父向子传参", route: "/transmission/farther2SonValue", },
   { index: 2, name: "mixinDirectory", nickName: "mixin学习", route: "/Vue/mixinDirectory" },
+  { index: 3, name: "echartsMinimizeDemo", nickName: "chart图标学习", route: "/component/charts/echartsMinimizeDemo" },
 
 ];
 

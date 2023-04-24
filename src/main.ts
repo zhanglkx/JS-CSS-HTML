@@ -8,5 +8,4 @@ import './index.css'
 import './public/reset.css'
 
 const app = createApp(App);
-
 app.use(store).use(router).use(Antd).mount("#app");
