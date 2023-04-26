@@ -1,5 +1,11 @@
 <template>
   <div :style="{ fontSize: postFontSize + 'em' }">
+    <div style="width: 400px;height: 160px;margin: 0 auto">
+      <h2 class="padding20">数据双向传递：</h2>
+      <h3 class="padding20"> 1、父组件将字体大小传递给子组件 </h3>
+      <h3 class="padding20"> 2、子组件将点击事件上传给父组件，父组件改变字体大小 </h3>
+    </div>
+
     <son-component
       v-for="post in posts"
       :key="post.id"
@@ -28,4 +34,9 @@ const posts = [
 const postsItem = ref(posts);
 </script>
 
-<style scoped></style>
+<style scoped>
+.padding20 {
+    padding: 10px;
+    text-align: left;
+}
+</style>
