@@ -1,6 +1,7 @@
 <template>
   <div class="echarts-box">
     <div id="myEcharts" :style="{ width: '900px', height: '300px' }"></div>
+    <div id="myEcharts" :style="{ width: '900px', height: '300px' }"></div>
   </div>
 </template>
 
@@ -9,13 +10,43 @@ import * as echarts from "echarts";
 
 import { onMounted } from "vue";
 
-onMounted(()=>{
-  let chart = echarts.init(document.getElementById("myEcharts"));
+onMounted(() => {
+  let chart = echarts.init(document.getElementById("myEcharts"), "dark");
 // 把配置和数据放这里
   chart.setOption(
     {
+      // 全局调色盘。
+      color: [
+        '#c23531',
+        '#2f4554',
+        '#61a0a8',
+        '#d48265',
+        '#91c7ae',
+        '#749f83',
+        '#ca8622',
+        '#bda29a',
+        '#6e7074',
+        '#546570',
+        '#c4ccd3'
+      ],
       xAxis: {
         type: "category",
+        // 此系列自己的调色盘。
+        color: [
+          '#37A2DA',
+          '#32C5E9',
+          '#67E0E3',
+          '#9FE6B8',
+          '#FFDB5C',
+          '#ff9f7f',
+          '#fb7293',
+          '#E062AE',
+          '#E690D1',
+          '#e7bcf3',
+          '#9d96f5',
+          '#8378EA',
+          '#96BFFF'
+        ],
         data: [
           "一月",
           "二月",
@@ -64,9 +95,7 @@ onMounted(()=>{
     //自适应大小
     chart.resize();
   };
-})
-
-
+});
 
 
 </script>

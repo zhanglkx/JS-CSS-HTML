@@ -43,7 +43,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: "/component/charts/echartsMinimizeDemo",
         name: "echartsMinimizeDemo",
-        component: () => import("@/views/component/charts/echartsMinimizeDemo.vue")
+        component: () => import("@/views/component/charts/lineChart/basicLineChart.vue")
       }
     ]
   },
