@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 
-import componentConfig, { routerConfig } from "../utils/componentConfig.js";
+import componentConfig, { routerConfig } from "../../router/componentConfig.js";
 
 const router = useRouter();
 
