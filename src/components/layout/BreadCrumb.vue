@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import {watch, reactive, toRefs} from "vue";
-import {useRoute, useRouter} from "vue-router";
+import { watch, reactive, toRefs } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
 export default {
   name: "BreadCrumb",
@@ -20,27 +20,27 @@ export default {
     const router = useRouter();
 
     const state = reactive({
-      matched: route.matched,
+      matched: route.matched
     });
 
     watch(
-        () => route,//构建一个函数获取useRoute()
-        (route) => {
-          state.matched = route.matched;//监听变动之后的操作 获取路由的matched数组并显示到面包屑上
-        },
-        { //用来配置是否立即执行监听和深度变动
-          immediate: true,
-          deep: true,
-        }
+      () => route,//构建一个函数获取useRoute()
+      (route) => {
+        state.matched = route.matched;//监听变动之后的操作 获取路由的matched数组并显示到面包屑上
+      },
+      { //用来配置是否立即执行监听和深度变动
+        immediate: true,
+        deep: true
+      }
     );
 
     const jumped = (path) => {
       router.push({
-        path: path,
+        path: path
       });
     };
 
-    return {...toRefs(state), jumped};
-  },
+    return { ...toRefs(state), jumped };
+  }
 };
 </script>

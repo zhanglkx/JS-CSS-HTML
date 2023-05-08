@@ -11,6 +11,7 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: "/about",
     name: "about",
+    meta: { title: "关于" },
     component: () => import("../views/AboutView.vue")
   },
   {
@@ -23,26 +24,31 @@ export const routes: Array<RouteRecordRaw> = [
       {
         path: "/Snake/subComponent",
         name: "subComponent",
+        meta: { title: "子功能" },
         component: () => import("@/views/component/subComponent.vue")
       },
       {
         path: "/transmission/farther2Son",
         name: "farther2Son",
+        meta: { title: "父子传值" },
         component: () => import("@/views/Vue/componentsSentValue/Father-SonTransmission/fatherComponent.vue")
       },
       {
         path: "/transmission/farther2SonValue",
         name: "farther2SonValue",
+        meta: { title: "父子传值" },
         component: () => import("@/views/Vue/componentsSentValue/father2SonDemo1/fartherComponent.vue")
       },
       {
         path: "/Vue/mixinDirectory",
         name: "mixinDirectory",
+        meta: { title: "mixin" },
         component: () => import("@/views/Vue/mixinDirectory/mixinLearn.vue")
       },
       {
         path: "/component/charts/echartsMinimizeDemo",
         name: "echartsMinimizeDemo",
+        meta: { title: "echartsDemo" },
         component: () => import("@/views/component/charts/lineChart/basicLineChart.vue")
       }
     ]
@@ -50,6 +56,7 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: "/metaLearn/:postId",
     name: "metaLearn",
+    meta: { title: "metaLearn" },
     component: () => import("@/views/V-router/metaLearn.vue")
   }
 ];

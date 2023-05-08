@@ -11,7 +11,7 @@
     <a-menu theme="dark" mode="inline" v-model="selectedKeys">
       <template v-for="item in navs">
         <a-menu-item v-if="!item.children" :key="item.path">
-          <router-link :to="item.path">
+          <router-link :to="{ name: item.name}">
             <!--判断有没有icon，有则显示-->
             <span v-if="item.meta.icon" class="anticon"><i :class="item.meta.icon"></i></span>
             <span>{{ item.meta.title }}</span>
@@ -26,7 +26,7 @@
 <script>
 import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
-import routes from "../../../router/index";
+import { routes } from "@/router";
 import SubMenu from "./SubMenu";
 
 export default {
@@ -40,6 +40,7 @@ export default {
   },
   setup() {
     const navs = ref(routes);
+    console.log(navs.value)
     let collapsedWidth = ref(80);
     const route = useRoute();
     let selectedKeys = ref([route.fullPath]);

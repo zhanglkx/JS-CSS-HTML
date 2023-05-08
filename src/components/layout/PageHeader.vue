@@ -1,16 +1,16 @@
 <template>
   <a-layout-header class="header">
-    <menu-unfold-outlined v-if="collapsed" class="trigger" @click="toggleCollapsed"/>
-    <menu-fold-outlined v-else class="trigger" @click="toggleCollapsed"/>
+    <menu-unfold-outlined v-if="collapsed" class="trigger" @click="toggleCollapsed" />
+    <menu-fold-outlined v-else class="trigger" @click="toggleCollapsed" />
     <a-dropdown v-model="visible">
       <a class="ant-dropdown-link" @click="e => e.preventDefault()">
         <a-avatar size="small" :style="{position: 'relative', top: '-2px'}">
           <template v-slot:icon>
-            <UserOutlined/>
+            <UserOutlined />
           </template>
         </a-avatar>
         admin
-        <DownOutlined/>
+        <DownOutlined />
       </a>
       <template v-slot:overlay>
         <a-menu @click="handleMenuClick">
@@ -30,12 +30,12 @@
 </template>
 
 <script>
-import {ref} from "vue";
+import { ref } from "vue";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
   DownOutlined,
-  UserOutlined,
+  UserOutlined
 } from "@ant-design/icons-vue";
 
 export default {
@@ -44,12 +44,12 @@ export default {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
     DownOutlined,
-    UserOutlined,
+    UserOutlined
   },
   props: {
-    collapsed: Boolean,
+    collapsed: Boolean
   },
-  setup(props, {emit}) {
+  setup(props, { emit }) {
     const toggleCollapsed = () => {
       emit("toggle-collapsed");
     };
@@ -64,9 +64,9 @@ export default {
     return {
       toggleCollapsed,
       visible,
-      handleMenuClick,
+      handleMenuClick
     };
-  },
+  }
 };
 </script>
 
