@@ -1,26 +1,44 @@
 <template>
-  <div>
-    <nav>
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/about">About</router-link>
-      |
-      <router-link to="/functionsList">functionsList</router-link>
-      |
-      <router-link to="/metaLearn/1">动态路由</router-link>
-    </nav>
-    <div class="fixed-button">
-      <a-button
-        style="border-radius: 10px"
-        type="primary"
-        size="large"
-        @click="pageBack"
-      >返回
-      </a-button>
-    </div>
-    <router-view />
-  </div>
+  <!--  为组件提供统一的全局化配置。-->
+  <a-config-provider>
+    <!--spin是loading-->
+    <a-spin :spinning="spinning" tip="Loading...">
+      <a-layout id="components-layout">
+        <!--侧边栏-->
+        <PageSider :collapsed="collapsed" />
+        <!--右侧区域-->
+        <a-layout>
+          <!--头部视图-->
+          <PageHeader :collapsed="collapsed" @toggle-collapsed="collapsed = !collapsed" />
+          <!--面包蟹-->
+          <BreadCrumb />
+          <!--内容区域-->
+          <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px', }">
+            <router-view></router-view>
+          </a-layout-content>
+        </a-layout>
+      </a-layout>
+    </a-spin>
+  </a-config-provider>
 </template>
+
+<script setup lang="ts">
+import { useRouter } from "vue-router";
+import { ref, computed } from "vue";
+import store from "./store";
+import PageHeader from "./components/layout/PageHeader.vue";
+import PageSider from "./components/layout/Sider/PageSider.vue";
+import BreadCrumb from "@/components/layout/BreadCrumb.vue";
+
+const router = useRouter();
+
+const spinning = computed(() => {
+  return store.state.spinning;
+});
+
+let collapsed = ref(false);
+
+</script>
 
 <style lang="scss">
 #app {
@@ -51,16 +69,4 @@ nav {
   left: 30px;
 }
 </style>
-<script setup lang="ts">
-import { useRouter } from "vue-router";
 
-const router = useRouter();
-/**
- * 路由返回
- */
-const pageBack = () => {
-  router.back();
-};
-
-
-</script>
