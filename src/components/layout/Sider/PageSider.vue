@@ -26,7 +26,7 @@
 <script>
 import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
-import { routes } from "@/router";
+import { routes } from "../src/router/index";
 import SubMenu from "./SubMenu";
 
 export default {
@@ -57,7 +57,6 @@ export default {
     );
 
     const onBreakpoint = () => {
-      console.log(navs);
       if (window.innerWidth > 650) {
         collapsedWidth.value = 80;
       } else {
