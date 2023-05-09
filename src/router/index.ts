@@ -50,6 +50,12 @@ export const routes: Array<RouteRecordRaw> = [
         name: "echartsMinimizeDemo",
         meta: { title: "echartsDemo" },
         component: () => import("@/views/component/charts/lineChart/basicLineChart.vue")
+      },
+      {
+        path: "/demos/CSSEffect/borderEffect",
+        name: "borderEffect",
+        meta: { title: "CSS特效" },
+        component: () => import("@/views/01demos/borderEffectInCSS/borderEffect.vue")
       }
     ]
   },

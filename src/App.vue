@@ -89,5 +89,14 @@ let collapsed = ref(false);
   border-radius: 10px;
 }
 
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+
+
 </style>
 
