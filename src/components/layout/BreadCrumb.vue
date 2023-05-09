@@ -1,5 +1,5 @@
 <template>
-  <a-breadcrumb :style="{ padding: '24px', paddingBottom: '0', }">
+  <a-breadcrumb>
     <template v-if="matched.length > 0">
       <a-breadcrumb-item v-for="item in matched" :key="item.path"><a href="javascript:;" @click="jumped(item.path)">
         {{ item.meta.title }}
@@ -12,9 +12,11 @@
 <script>
 import { watch, reactive, toRefs } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { left } from "core-js/internals/array-reduce";
 
 export default {
   name: "BreadCrumb",
+  methods: { left },
   setup() {
     const route = useRoute();
     const router = useRouter();

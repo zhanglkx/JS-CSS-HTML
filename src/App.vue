@@ -10,10 +10,10 @@
         <a-layout>
           <!--头部视图-->
           <PageHeader :collapsed="collapsed" @toggle-collapsed="collapsed = !collapsed" />
-          <!--面包蟹-->
-          <BreadCrumb />
+          <!--面包屑-->
+          <BreadCrumb class="bread-crumb" :style="{ margin: '2px 16px', padding: '2px', background: '#fff',}" />
           <!--内容区域-->
-          <a-layout-content :style="{ margin: '2px 16px', padding: '24px', background: '#fff', minHeight: '280px', }">
+          <a-layout-content class="content-style">
             <router-view></router-view>
           </a-layout-content>
         </a-layout>
@@ -50,24 +50,6 @@ let collapsed = ref(false);
   position: relative;
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-
-.fixed-button {
-  position: fixed;
-  top: 30px;
-  left: 30px;
-}
 
 #components-layout {
   min-height: 100vh;
@@ -89,6 +71,23 @@ nav {
     background: rgba(255, 255, 255, 0.2);
     margin: 16px;
   }
+}
+
+.bread-crumb {
+  margin: 2px 16px;
+  padding: 2px;
+  text-align: left;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.content-style {
+  margin: 2px 16px;
+  padding: 24px;
+  background-color: white;
+  min-height: 280px;
+  border-radius: 10px;
+  //:style="{ margin: '2px 16px', padding: '24px', background: '#fff', minHeight: '280px', borderRadius:'10px'}"
 }
 
 </style>
