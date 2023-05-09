@@ -87,7 +87,6 @@ let collapsed = ref(false);
   background-color: white;
   min-height: 280px;
   border-radius: 10px;
-  //:style="{ margin: '2px 16px', padding: '24px', background: '#fff', minHeight: '280px', borderRadius:'10px'}"
 }
 
 </style>
