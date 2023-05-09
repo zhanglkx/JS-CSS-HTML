@@ -56,6 +56,12 @@ export const routes: Array<RouteRecordRaw> = [
         name: "borderEffect",
         meta: { title: "CSS特效" },
         component: () => import("@/views/01demos/borderEffectInCSS/borderEffect.vue")
+      },
+      {
+        path: "/demos/CSSEffect/WaterDropLogin",
+        name: "WaterDropLogin",
+        meta: { title: "水滴登录界面" },
+        component: () => import("@/views/01demos/WaterDropLogin/waterDropLogin.vue")
       }
     ]
   },
