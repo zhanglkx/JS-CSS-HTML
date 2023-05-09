@@ -26,7 +26,7 @@
 <script>
 import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
-import { routes } from "../src/router/index";
+import { routes } from "@/router";
 import SubMenu from "./SubMenu";
 
 export default {

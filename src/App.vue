@@ -13,7 +13,7 @@
           <!--面包蟹-->
           <BreadCrumb />
           <!--内容区域-->
-          <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px', }">
+          <a-layout-content :style="{ margin: '2px 16px', padding: '24px', background: '#fff', minHeight: '280px', }">
             <router-view></router-view>
           </a-layout-content>
         </a-layout>
@@ -68,5 +68,28 @@ nav {
   top: 30px;
   left: 30px;
 }
+
+#components-layout {
+  min-height: 100vh;
+
+  .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #1890ff;
+    }
+  }
+
+  .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+  }
+}
+
 </style>
 
