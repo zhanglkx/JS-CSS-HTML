@@ -12,12 +12,14 @@ const store = useStore()
 
 <style lang="scss" scoped>
 .box {
+  text-align: center;
+  margin: 0 auto;
   width: 600px;
   height: 600px;
   background: #5753C9 linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%);
   transition: border-radius 3s linear;
   border-radius: 60% 40% 59% 41% / 55% 36% 64% 45%;
-  animation: borderAnimation 50s infinite;
+  animation: borderAnimation 10s infinite;
 }
 
 @keyframes borderAnimation
