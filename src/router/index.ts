@@ -62,6 +62,12 @@ export const routes: Array<RouteRecordRaw> = [
         name: "WaterDropLogin",
         meta: { title: "水滴登录界面" },
         component: () => import("@/views/01demos/WaterDropLogin/waterDropLogin.vue")
+      },
+      {
+        path: "/demos/JavaScript/LyricsScroll",
+        name: "WaterDropLogin",
+        meta: { title: "歌词滚动" },
+        component: () => import("@/views/01demos/LyricsScroll/LyricsScroll.vue")
       }
     ]
   },
