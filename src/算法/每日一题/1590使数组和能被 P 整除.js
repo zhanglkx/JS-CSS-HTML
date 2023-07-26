@@ -42,7 +42,7 @@ function arrayModP(arr, p) {
 /**
  * ==========================
  */
-var minSubarray = function (nums, p) {
+var minSubarray = function(nums, p) {
   let x = 0;
   for (const num of nums) {
     x = (x + num) % p;
