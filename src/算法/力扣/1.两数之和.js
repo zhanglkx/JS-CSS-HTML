@@ -30,15 +30,24 @@ const twoSum1 = (nums, target) => {
       return [targetNumIndex, i];
     } else {                                    // 如果不存在，说明之前没出现过目标元素
       prevNums[curNum] = i;                     // 存入当前的元素和对应的索引
-      console.log(prevNums);
     }
   }
-}
+};
 
-const add = (nums,target) => {
+const add = (nums, target) => {
+  let prevNum = {};
+  for (let i = 0; i < nums.length; i++) {
+    const temp = nums[i];
+    const targetNum = target - temp;
+    const targetNumIndex = prevNum[targetNum];
+    if (targetNumIndex !== undefined) {
+      return [targetNumIndex, i];
+    } else {
+      prevNum[temp] = i;
+    }
+  }
+};
 
-}
-
-// twoSum1( [3,3], 6)
-twoSum1( [2,15,11,7], 9)
-// twoSum1( [3,2,4], 6)
+console.log(add([3, 3], 6));
+console.log(add([12, 15, 2, 7], 9));
+console.log(add([3, 2, 4], 6));
