@@ -1,7 +1,7 @@
 /**
  * 官方
  */
-var lengthOfLongestSubstring = function (s) {
+let lengthOfLongestSubstring1 = function(s) {
   // 哈希集合，记录每个字符是否出现过
   const occ = new Set();
   const n = s.length;
@@ -27,7 +27,7 @@ var lengthOfLongestSubstring = function (s) {
 /**
  * 题解1
  */
-var lengthOfLongestSubstring = function (str) {
+const lengthOfLongestSubstring = function (str) {
   console.log(str);
   if (str.length <= 1) {
     return str.length;
