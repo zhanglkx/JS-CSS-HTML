@@ -12,17 +12,16 @@
  * @param {number} size
  * @return {Array[]}
  */
+
 const chunk = function(arr, size) {
   let tempAr = [];
-  let count = Math.floor(arr.length / size);
-
-  for (let i = 0; i < count; i++) {
+  while (arr.length>size){
     tempAr.push(arr.splice(0, size));
   }
+
   if (arr.length > 0)
     tempAr.push(arr);
   return tempAr;
 };
-
 // console.log(chunk([1, 2, 3, 4, 5, 6, 7, 8], 3));
 console.log(chunk([1, 2, 3, 4, 5], 1));
