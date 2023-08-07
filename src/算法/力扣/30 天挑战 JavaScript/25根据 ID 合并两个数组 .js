@@ -16,3 +16,19 @@ const join = function(arr1, arr2) {
   return [...map.values()].sort(((a, b) => a.id - b.id));
 };
 
+// let arr1 = [
+//   { "id": 1, "x": 1 },
+//   { "id": 2, "x": 9 }
+// ];
+// let arr2 = [{ "id": 3, "x": 5 }];
+
+let arr1 = [
+  { "id": 1, "x": 2, "y": 3 },
+  { "id": 2, "x": 3, "y": 6 }
+];
+let arr2 = [
+  { "id": 2, "x": 10, "y": 20 },
+  { "id": 3, "x": 0, "y": 0 }
+];
+
+console.log(join(arr1, arr2));
