@@ -33,7 +33,7 @@ let hexagons = [];
 let lineWidth    = radius;
 let colorPalette = [];
 let linesWidth   = [];
-let isShowHexagonShape = !true;
+let isShowHexagonShape = false;
 let patternSchema      = 1;
 let isAnyUserAction    = false;
 
