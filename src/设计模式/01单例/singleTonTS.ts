@@ -10,6 +10,11 @@ class Singleton {
     }
     return Singleton.singleton;
   }
+
+  logName(){
+    console.log('zlk');
+  }
+
 }
 
 function show(): void {
@@ -21,4 +26,9 @@ function show(): void {
   } else {
     console.log("two singletons are not equivalent");
   }
+
+  Singleton.getInstance().logName();
+
 }
+
+show();

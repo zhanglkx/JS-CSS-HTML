@@ -3,8 +3,7 @@ class LocalStorageLazy {
   static localStorage: LocalStorageLazy;
 
   // 私有化构造器
-  private constructor() {
-  }
+  private constructor() {}
 
   // 提供一个外部可访问的的静态方法
   public static getInstance() {
@@ -27,15 +26,15 @@ class LocalStorageLazy {
   }
 }
 
-
 const instanceLazy = LocalStorageLazy.getInstance();
+
+console.log(instanceLazy == null);
 
 instanceLazy.setItem("instanceLazy", { "1": 1, "2": 3 });
 
 let val = instanceLazy.getItem("instanceLazy");
 
 console.log("instanceLazy", val);
-
 
 const instance = LocalStorageLazy.getInstance();
 instance.setItem("instance", { "3": 3, "4": 4 });
