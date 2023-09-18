@@ -52,10 +52,9 @@ Function.prototype.call2 = function (context, ...args) {
 };
 
 // 测试一下
-var value = 2;
-
-var obj = {
-  value: 1,
+let value = 2;
+let obj = {
+  value: 1
 };
 
 function bar(name, age) {
@@ -78,10 +77,10 @@ console.log(bar.call2(obj, "kevin", 18));
 // }
 
 // 测试一下
-var value = 2;
+value = 2;
 
-var obj = {
-  value: 1,
+obj = {
+  value: 1
 };
 
 function bar() {

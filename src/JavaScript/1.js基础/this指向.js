@@ -1,16 +1,98 @@
+// 一、被对象调用的时候
 // function sayHi() {
-//     console.log('Hello,', this.name)
+//   console.log("Hello,", this.name);
 // }
 //
 // let person2 = {
-//     name: '小万',
-//     sayHi: sayHi
-// }
+//   name: "小万",
+//   sayHi: sayHi
+// };
 //
 // let person1 = {
-//     name: '张三',
-//     friend: person2
+//   name: "张三",
+//   sayHi: sayHi,
+// friend: person2
+// };
+//
+// person1.sayHi();
+// person2.sayHi();
+// person1.friend.sayHi() // Hello, 小万  链式调用，指向最后一个调用他的方法
+/** ********************************************************************************************************************** **/
+
+// window.name = "window";
+//
+// function sayHi() {
+//   console.log("Hello,", this.name, this === window);
 // }
+
+// var name = "1999";
+// var obj = {
+//   name: "are you ok",
+//   show : function() {
+//     return function(){
+//       console.log(name,this.name,this===window);
+//     }
+//   }
+// };
+// var foo1 = obj.show();
+// foo1();
+
+// var name = 'China';
+// var obj = {
+//   name : 'America',
+//   show : function() {
+//     return function(){
+//       console.log(this.name);
+//     }
+//   }
+// }
+// var a = obj.show();
+// a(); // China
+
+/** ********************************************************************************************************************** **/
+// 作为构造函数
+// function Person() {
+//   this.name = "张三";
+//   return {
+//     name: "李四"
+//   };
+// }
+// //这里new出来的是对象{name: "李四"}，所以this指向这个对象person.name等价于this.name，也即李四
+// let person = new Person();
+// console.log(person.name);//李四
+
+/** ********************************************************************************************************************** **/
+// 箭头函数
+// var age = 20;
+// var obj = {
+//   age: 18,
+//   fn: () => {
+//     console.log(this.age,this);//20
+//     debugger
+//   }
+// };
+// obj.fn();
+
+
+/** ********************************************************************************************************************** **/
+
+window.name = "这是window_name";
+
+let f1 = function () {
+  return this.name;
+};
+let f2 = () => this.name;
+
+let obj = { name: "这是obj_name" };
+
+console.log(f1.call(obj));  //这是obj_name
+console.log(f2.call(obj));  // 这是window_name
+console.log(f1.apply(obj)); // 这是obj_name
+console.log(f2.apply(obj)); // 这是window_name
+console.log(f1.bind(obj)());  // 这是obj_name
+console.log(f2.bind(obj)());  // 这是window_name
+
+
 /** ********************************************************************************************************************** **/
 // person1.friend.sayHi() // Hello, 小万
 //
@@ -187,27 +269,27 @@
 // obj = { name: "大白" };
 /** ********************************************************************************************************************** **/
 
-function unknownSum() {
-  // 存储每次函数调用时的参数
-  let arr = [];
-  const add = (...params) => {
-    // 拼接新参数
-    arr = arr.concat(params);
-    return add;
-  };
-
-  // 对参数进行求和
-  add.toString = function () {
-    let result = 0;
-    // 对arr中的元素进行求和
-    for (let i = 0; i < arr.length; i++) {
-      result += arr[i];
-    }
-    return result + "";
-  };
-
-  return add;
-}
-
-const result1 = unknownSum()(1, 6, 7, 8)(2)(3)(4);
-console.log("result1 =", result1.toString());
+// function unknownSum() {
+//   // 存储每次函数调用时的参数
+//   let arr = [];
+//   const add = (...params) => {
+//     // 拼接新参数
+//     arr = arr.concat(params);
+//     return add;
+//   };
+//
+//   // 对参数进行求和
+//   add.toString = function () {
+//     let result = 0;
+//     // 对arr中的元素进行求和
+//     for (let i = 0; i < arr.length; i++) {
+//       result += arr[i];
+//     }
+//     return result + "";
+//   };
+//
+//   return add;
+// }
+//
+// const result1 = unknownSum()(1, 6, 7, 8)(2)(3)(4);
+// console.log("result1 =", result1.toString());
