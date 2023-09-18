@@ -1,5 +1,5 @@
 // import {objectFactory} from "@/03-JavaScript/1.ES/call、bind、apply/new-1";
-const { objectFactory, add, add1 } = require("./new-1");
+const { objectFactory, objectFactory1, _new, newOperator } = require("./new-1");
 
 function Otaku(name, age) {
   this.name = name;
@@ -15,10 +15,32 @@ Otaku.prototype.sayYourName = function() {
 };
 
 
-const person = objectFactory(Otaku, "Kevin", "18");
+// const person = objectFactory1(Otaku, "Kevin", "18");
+//
+// console.log(person.name); // Kevin
+// console.log(person.habit); // Games
+// console.log(person.strength); // 60
+//
+// person.sayYourName(); // I am Kevin
 
-console.log(person.name); // Kevin
-console.log(person.habit); // Games
-console.log(person.strength); // 60
+class Person {
+  constructor(name, age, habit) {
+    this.name = name;
+    this.age = 15;
+    this.habit = habit;
+  }
 
-person.sayYourName(); // I am Kevin
+  logInfo() {
+    console.log("我是日志！");
+  }
+
+
+}
+
+// const person = new Person("蜜雪冰城", 11, "喝奶茶");
+const person = newOperator(Person, "蜜雪冰城", 11, "喝奶茶");
+console.log(person.name);
+console.log(person.age);
+console.log(person.habit);
+person.logInfo();
+
