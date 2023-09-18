@@ -31,19 +31,19 @@ export const routes: Array<RouteRecordRaw> = [
         path: "/transmission/farther2Son",
         name: "farther2Son",
         meta: { title: "父子传值" },
-        component: () => import("@/views/Vue/componentsSentValue/Father-SonTransmission/fatherComponent.vue")
+        component: () => import("@/07-Vue/componentsSentValue/Father-SonTransmission/fatherComponent.vue")
       },
       {
         path: "/transmission/farther2SonValue",
         name: "farther2SonValue",
         meta: { title: "父子传值" },
-        component: () => import("@/views/Vue/componentsSentValue/father2SonDemo1/fartherComponent.vue")
+        component: () => import("@/07-Vue/componentsSentValue/father2SonDemo1/fartherComponent.vue")
       },
       {
         path: "/Vue/mixinDirectory",
         name: "mixinDirectory",
         meta: { title: "mixin" },
-        component: () => import("@/views/Vue/mixinDirectory/mixinLearn.vue")
+        component: () => import("@/07-Vue/mixinDirectory/mixinLearn.vue")
       },
       {
         path: "/component/charts/echartsMinimizeDemo",
@@ -55,19 +55,19 @@ export const routes: Array<RouteRecordRaw> = [
         path: "/demos/CSSEffect/borderEffect",
         name: "borderEffect",
         meta: { title: "CSS特效" },
-        component: () => import("@/views/01demos/borderEffectInCSS/borderEffect.vue")
+        component: () => import("@/10-demos/borderEffectInCSS/borderEffect.vue")
       },
       {
         path: "/demos/CSSEffect/WaterDropLogin",
         name: "WaterDropLogin",
         meta: { title: "水滴登录界面" },
-        component: () => import("@/views/01demos/WaterDropLogin/waterDropLogin.vue")
+        component: () => import("@/10-demos/WaterDropLogin/waterDropLogin.vue")
       },
       {
         path: "/demos/JavaScript/LyricsScroll",
         name: "WaterDropLogin",
         meta: { title: "歌词滚动" },
-        component: () => import("@/views/01demos/LyricsScroll/LyricsScroll.vue")
+        component: () => import("@/10-demos/LyricsScroll/LyricsScroll.vue")
       }
     ]
   },
