@@ -23,24 +23,5 @@ Otaku.prototype.sayYourName = function() {
 //
 // person.sayYourName(); // I am Kevin
 
-class Person {
-  constructor(name, age, habit) {
-    this.name = name;
-    this.age = 15;
-    this.habit = habit;
-  }
 
-  logInfo() {
-    console.log("我是日志！");
-  }
-
-
-}
-
-// const person = new Person("蜜雪冰城", 11, "喝奶茶");
-const person = newOperator(Person, "蜜雪冰城", 11, "喝奶茶");
-console.log(person.name);
-console.log(person.age);
-console.log(person.habit);
-person.logInfo();
 
