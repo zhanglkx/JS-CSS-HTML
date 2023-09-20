@@ -3,15 +3,19 @@ var container = document.getElementById('container');
 
 function getUserAction() {
     container.innerHTML = count++;
+    console.log(this) //window
 };
 
-function debounce(fun, wait) {
-    let timer;
+// 第一版
+function debounce(func, wait) {
+    var timeout;
+    console.log(this)  //window
     return function () {
-        clearTimeout(timer)
-        timer = setTimeout(fun(), wait);
+        clearTimeout(timeout)
+        timeout = setTimeout(func, wait);
+        console.log(this) //<div id="container">1</div>
     }
 }
 
-container.onmousemove = debounce(getUserAction,1000);
+container.onmousemove = debounce(getUserAction, 1000);
 // container.onmousemove = getUserAction
