@@ -1,5 +1,3 @@
-var count = 1;
-var container = document.getElementById('container');
 
 function getUserAction() {
     container.innerHTML = count++;
@@ -53,7 +51,7 @@ function debounce3(func, wait) {
  * @param {any} immediate 
  * @returns 
 * */
-function debounce(func, wait, immediate) {
+function debounce4(func, wait, immediate) {
     var timeout;
 
     return function () {
@@ -77,6 +75,43 @@ function debounce(func, wait, immediate) {
     }
 }
 
+// 第五版
+/*
+ * 
+ * 此时注意一点，就是 getUserAction 函数可能是有返回值的，所以我们也要返回函数的执行结果，但是当 immediate 为 false 的时候，
+ * 因为使用了 setTimeout ，我们将 func.apply(context, args) 的返回值赋给变量，最后再 return 的时候，值将会一直是 undefined，所以我们只在 immediate 为 true 的时候返回函数的执行结果。
+ * @param {any} func  需要做防抖的函数
+ * @param {any} wait  间隔时间
+ * @param {any} immediate  是否立即执行
+ * @returns  返回值
+* */
+function debounce(func, wait, immediate) {
 
-container.onmousemove = debounce(getUserAction, 1000);
+    var timeout, result;
+
+    return function () {
+        var context = this;
+        var args = arguments;
+
+        if (timeout) clearTimeout(timeout);
+        if (immediate) {
+            // 如果已经执行过，不再执行
+            var callNow = !timeout;
+            timeout = setTimeout(function () {
+                timeout = null;
+            }, wait)
+            if (callNow) result = func.apply(context, args)
+        } else {
+            timeout = setTimeout(function () {
+                func.apply(context, args)
+            }, wait);
+        }
+        return result;
+    }
+}
+
+
+var count = 1;
+var container = document.getElementById('container');
+// container.onmousemove = debounce(getUserAction, 1000);
 // container.onmousemove = getUserAction
