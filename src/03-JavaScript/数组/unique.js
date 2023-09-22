@@ -1,18 +1,21 @@
 // V1 双层for循环
-let array = [1, 1, 2, '1', '2'];
-
+let array = [1, 1, 2, '1', '1', '2'];
 
 function unique(array) {
-
-    let res = [];
-
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < res.length - i; j++) {
-            if (array[i] === res[i]) {
-                break
+    // res用来存储结果
+    var res = [];
+    for (var i = 0, arrayLen = array.length; i < arrayLen; i++) {
+        for (var j = 0, resLen = res.length; j < resLen; j++) {
+            if (array[i] === res[j]) {
+                break;
             }
-            res.push[array[i]]
+        }
+        // 如果array[i]是唯一的，那么执行完循环，j等于resLen
+        if (j === resLen) {
+            res.push(array[i])
         }
     }
-    return res
+    return res;
 }
+
+console.log(unique(array)); // [1, "1"]
