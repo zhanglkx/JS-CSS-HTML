@@ -9,7 +9,16 @@
 
 const new_arr = JSON.parse(JSON.stringify(arr));
 
-
+const deepCopy = function(obj) {
+  if (typeof obj !== "object") return;
+  const newObj = obj instanceof Array ? [] : {};
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      newObj[key] = typeof obj[key] === "object" ? deepCopy(obj[key]) : obj[key];
+    }
+  }
+  return newObj;
+};
 
 
 // new_arr[4].old = 2;
