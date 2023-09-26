@@ -6,6 +6,7 @@ self.onmessage = (event) => {
   if (event.data === "slowDown") {
     fibonacci(42);
   } else {
+    console.log(event)
     canvasB = event.data.canvas;
     ctxWorker = canvasB.getContext("2d");
     startCounting();
