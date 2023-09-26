@@ -53,12 +53,11 @@ class Promise {
 
 const promise = new Promise((resolve, reject) => {
     resolve('成功');
-  }).then(
+}).then(
     (data) => {
-      console.log('success', data)
+        console.log('success', data)
     },
     (err) => {
-      console.log('faild', err)
+        console.log('faild', err)
     }
-  )
-  
+)
