@@ -7,26 +7,37 @@
 <body>
 <div class="card">
   <div class="imgBox">
-    <img
-      src="https://t7.baidu.com/it/u=1819248061,230866778&fm=193&f=GIF"
-      alt="title">
+    <img src="https://t7.baidu.com/it/u=1819248061,230866778&fm=193&f=GIF" alt="image">
   </div>
   <div class="content">
-    <div class="details">
-      <h2>三月七<br />
-        <p>冰系</p>
-      </h2>
-      <div class="data">
-        <h3>命途<br /><sub>存护</sub></h3>
-        <h3>派系<br /><sub>无名客</sub></h3>
-        <h3>所属<br /><sub>星穹列车</sub></h3>
+    <div class="content_title">
+      <h2>早早早</h2>
+      <p>不早了</p>
+    </div>
+    <div class="content_attr">
+      <div class="att_item1">
+        <h3>方法</h3>
+        <p>老六</p>
       </div>
-      <div class="actionBtn">
-        <button>Follow</button>
-        <button>Message</button>
+
+      <div class="att_item2">
+        <h3>方法</h3>
+        <p>老六</p>
       </div>
+
+      <div class="att_item3">
+        <h3>方法</h3>
+        <p>老六</p>
+      </div>
+
     </div>
   </div>
+
+  <div class="content_action">
+    <button>Follow</button>
+    <button>Follow</button>
+  </div>
+
 </div>
 </body>
 <style>
@@ -38,53 +49,51 @@
     }
 
     body {
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(45deg, red, yellow);
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
-        background: linear-gradient(45deg, #fbda61, #ff5acd);
     }
 
     .card {
         position: relative;
+        border-radius: 20px;
+        background: white;
         width: 350px;
         height: 200px;
-        transition: 0.5s;
-        background-color: white;
-        border-radius: 20px;
-        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+        transition: 0.5s ease-in-out;
     }
 
     .card:hover {
-        height: 450px;
+        height: 460px;
+
     }
 
-    .imgBox {
+    .card .imgBox {
         position: absolute;
-        top: -50px;
-        left: 50%;
         width: 150px;
         height: 150px;
-        transform: translateX(-50%);
-        background: #fff;
+        overflow: hidden;
         border-radius: 20px;
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
-        overflow: hidden;
-        transition: 0.5s;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -50px;
+        transition: 0.5s ease-in-out;
+        visibility: hidden;
+    }
+
+    .card .imgBox img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .card:hover .imgBox {
         width: 250px;
         height: 250px;
-    }
-
-    .imgBox img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
     }
 
     .card .content {
@@ -97,7 +106,7 @@
         overflow: hidden;
     }
 
-    .card .content .details {
+    .card .content .content_attr {
         padding: 40px;
         text-align: center;
         width: 100%;
@@ -105,68 +114,6 @@
         transform: translateY(150px);
     }
 
-    /* 当鼠标悬停在卡片上时，卡片内容会发生变化 */
-    .card:hover .content .details {
-        transform: translateY(0px);
-    }
-
-    .card .content .details h2 {
-        font-size: 1.5em;
-        font-weight: 600;
-        color: #555555;
-        line-height: 1.2em;
-    }
-
-    /* 设置卡片内容中标题下的小段落的样式 */
-    .card .content .details h2 p {
-        font-size: 0.75em;
-        font-weight: 500;
-        opacity: 0.5;
-    }
-
-    .card .content .details .data {
-        display: flex;
-        justify-content: space-around;
-        margin: 20px 0;
-    }
-
-    /* 设置卡片内容中详细信息中每个小标题的样式 */
-    .card .content .details .data h3 {
-        width: 80px;
-        padding: 0;
-        font-size: 1em;
-        color: #555;
-        line-height: 1.2em;
-        font-weight: 600;
-    }
-
-    /* 设置卡片内容中详细信息中每个小标题下的小字体的样式 */
-    .card .content .details .data h3 sub {
-        font-size: 0.85em;
-        font-weight: 400;
-        opacity: 0.5;
-    }
-
-    /* 设置卡片内容中操作按钮的样式 */
-    .card .content .details .actionBtn {
-        display: flex;
-        justify-content: space-between;
-    }
-
-
-    /* 设置卡片内容中操作按钮的样式 */
-    .card .content .details .actionBtn button {
-        width: 120px;
-        padding: 10px 30px;
-        border-radius: 5px;
-        border: none;
-        outline-style: none;
-        font-size: 1em;
-        font-weight: 500;
-        background: #ff5acd;
-        color: #fff;
-        cursor: pointer;
-    }
 
 </style>
 </html>
