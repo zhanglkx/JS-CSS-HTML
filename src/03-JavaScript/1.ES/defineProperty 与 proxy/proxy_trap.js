@@ -21,6 +21,15 @@ const objProxy = new Proxy(obj, {
     has: function (target, key) {
         console.log(`监听: 监听in判断 ${key}属性`)
         return key in target
+    },
+    apply: function (target, thisArg, otherArgs) {
+        console.log("监听执行了apply操作")  //监听执行了apply操作
+        target.apply(thisArg, otherArgs)
+    },
+    construct: function (target, otherArray) {
+        console.log("监听执行了new操作")
+        console.log(target, otherArray) //foo(num1, num2) { console.log(this, num1, num2) }     (2) ['aaa', 'bbb']
+        return new target(...otherArray)
     }
 })
 
@@ -31,3 +40,6 @@ obj.name = 1
 
 delete objProxy.name
 console.log("age" in objProxy)  //true
+
+objProxy.apply("abc", [111, 222])
+new fooProxy("aaa", "bbb")
