@@ -16,7 +16,7 @@
 
 </script>
 
-<style src="./01loginPage.css"></style>
+<style src="01loginPage.css"></style>
 
 <style lang="scss" scoped>
 

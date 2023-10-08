@@ -10,11 +10,11 @@
     <hr>
     <div>加载本地</div>
     <video controls style="width: 300px;height: 150px;">
-      <source src="../../assets/video/奥克斯拆解视频.mp4" type="video/mp4">
+      <source src="../../../assets/video/奥克斯拆解视频.mp4" type="video/mp4">
     </video>
 
     <div>加载本地告白气球</div>
-    <audio src="../../assets/audio/告白气球.mp3" controls autoplay loop="true">
+    <audio src="../../../assets/audio/告白气球.mp3" controls autoplay loop="true">
 
     </audio>
     <br>

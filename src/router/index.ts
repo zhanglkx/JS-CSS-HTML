@@ -49,25 +49,31 @@ export const routes: Array<RouteRecordRaw> = [
         path: "/component/charts/echartsMinimizeDemo",
         name: "echartsMinimizeDemo",
         meta: { title: "echartsDemo" },
-        component: () => import("@/views/component/charts/lineChart/basicLineChart.vue")
+        component: () => import("@/views/pages/charts/lineChart/basicLineChart.vue")
       },
       {
         path: "/demos/CSSEffect/borderEffect",
         name: "borderEffect",
         meta: { title: "CSS特效" },
-        component: () => import("@/10-demos/borderEffectInCSS/borderEffect.vue")
+        component: () => import("@/views/pages/borderEffectInCSS/borderEffect.vue")
+      },
+      {
+        path: "/Vue/State/Watch",
+        name: "watchFun",
+        meta: { title: "watch练习" },
+        component: () => import("@/views/pages/watch/WatchFun.vue")
       },
       {
         path: "/demos/CSSEffect/WaterDropLogin",
         name: "WaterDropLogin",
         meta: { title: "水滴登录界面" },
-        component: () => import("@/10-demos/WaterDropLogin/waterDropLogin.vue")
+        component: () => import("@/views/pages/WaterDropLogin/waterDropLogin.vue")
       },
       {
         path: "/demos/JavaScript/LyricsScroll",
         name: "WaterDropLogin",
         meta: { title: "歌词滚动" },
-        component: () => import("@/10-demos/LyricsScroll/LyricsScroll.vue")
+        component: () => import("@/views/pages/LyricsScroll/LyricsScroll.vue")
       }
     ]
   },
