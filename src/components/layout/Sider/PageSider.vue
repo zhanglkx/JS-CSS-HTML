@@ -40,7 +40,6 @@ export default {
   },
   setup() {
     const navs = ref(routes);
-    console.log(navs.value)
     let collapsedWidth = ref(80);
     const route = useRoute();
     let selectedKeys = ref([route.fullPath]);
