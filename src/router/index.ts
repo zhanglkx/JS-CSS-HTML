@@ -64,32 +64,42 @@ export const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/pages/watch/WatchFun.vue")
       },
       {
+        path: "/Vue/State/Computed",
+        name: "Computed",
+        meta: { title: "Computed练习" },
+        component: () => import("@/views/pages/computed/ComputedLearn.vue")
+      },
+      {
         path: "/demos/CSSEffect/WaterDropLogin",
-        name: "WaterDropLogin",
+        name: "WaterDropLogin2",
         meta: { title: "水滴登录界面" },
         component: () => import("@/views/pages/WaterDropLogin/waterDropLogin.vue")
       },
       {
         path: "/demos/JavaScript/LyricsScroll",
-        name: "WaterDropLogin",
+        name: "LyricsScroll",
         meta: { title: "歌词滚动" },
         component: () => import("@/views/pages/LyricsScroll/LyricsScroll.vue")
       }
     ]
   },
-  {
-    path: "/metaLearn/:postId",
-    name: "metaLearn",
-    meta: { title: "metaLearn" },
-    component: () => import("@/views/V-router/metaLearn.vue")
-  }
+  // {
+  //   path: "/metaLearn/:postId",
+  //   name: "metaLearn",
+  //   meta: { title: "metaLearn" },
+  //   component: () => import("@/views/V-router/metaLearn.vue")
+  // }
 ];
 
+
+ 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   // 匹配当前路由的 RouterLink 默认的 CSS class。如果没有提供，则会使用
   linkActiveClass: "router-active",
   routes
 });
+
+ 
 
 export default router;

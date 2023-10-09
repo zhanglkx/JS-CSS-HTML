@@ -3,24 +3,24 @@
 </script>
 
 <template>
-  <div class="main">
-    <form>
-      <p>用户名<br />
-        <input type="text" class="textinput" placeholder="请输入用户名" />
-      </p>
-      <p>密码
-        <br />
-        <input type="password" class="textinput" placeholder="请输入密码" />
-      </p>
-      <p>
-        <input id="remember" type="checkbox" /><label for="remember">记住密码</label>
-      </p>
-      <p>
-        <input type="submit" value="登录" />
-      </p>
-      <p class="txt">还没有账户？<a href="#">注册</a></p>
-    </form>
-  </div>
+    <div class="main">
+        <form>
+            <p>用户名<br />
+                <input type="text" class="textinput" placeholder="请输入用户名" />
+            </p>
+            <p>密码
+                <br />
+                <input type="password" class="textinput" placeholder="请输入密码" autocomplete="off" />
+            </p>
+            <p>
+                <input id="remember" type="checkbox" /><label for="remember">记住密码</label>
+            </p>
+            <p>
+                <input type="submit" value="登录" />
+            </p>
+            <p class="txt">还没有账户？<a href="#">注册</a></p>
+        </form>
+    </div>
 </template>
 
 <style scoped>
@@ -77,9 +77,11 @@ body {
     50% {
         border-radius: 42% 58% 49% 51% / 52% 36% 64% 48%;
     }
+
     75% {
         border-radius: 52% 48% 49% 51% / 43% 49% 51% 57%;
     }
+
     25% {
         border-radius: 52% 48% 59% 41% / 43% 49% 51% 57%;
     }
@@ -90,10 +92,12 @@ body {
         left: 80px;
         top: 110px;
     }
+
     50% {
         left: 50px;
         top: 80px;
     }
+
     75% {
         left: 80px;
         top: 120px;
@@ -105,10 +109,12 @@ body {
         left: 100px;
         top: 90px;
     }
+
     50% {
         left: 110px;
         top: 75px;
     }
+
     75% {
         left: 130px;
         top: 100px;
@@ -166,6 +172,4 @@ a {
 a:hover {
     text-decoration: underline dotted;
 }
-
-
 </style>
