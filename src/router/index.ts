@@ -40,6 +40,12 @@ export const routes: Array<RouteRecordRaw> = [
         component: () => import("@/07-Vue/componentsSentValue/father2SonDemo1/fartherComponent.vue")
       },
       {
+        path: "/transmission/defineExpose",
+        name: "defineExpose",
+        meta: { title: "defineExpose" },
+        component: () => import("@/07-Vue/ScriptSetup/DefineExpose/FatherPage.vue")
+      },
+      {
         path: "/Vue/mixinDirectory",
         name: "mixinDirectory",
         meta: { title: "mixin" },
@@ -82,7 +88,7 @@ export const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/pages/LyricsScroll/LyricsScroll.vue")
       }
     ]
-  },
+  }
   // {
   //   path: "/metaLearn/:postId",
   //   name: "metaLearn",
@@ -92,7 +98,6 @@ export const routes: Array<RouteRecordRaw> = [
 ];
 
 
- 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   // 匹配当前路由的 RouterLink 默认的 CSS class。如果没有提供，则会使用
@@ -100,6 +105,5 @@ const router = createRouter({
   routes
 });
 
- 
 
 export default router;
