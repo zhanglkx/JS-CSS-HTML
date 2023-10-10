@@ -23,6 +23,7 @@ const setName = () => {
 }
 /**
  * 在watch的第二个参数中，函数的参数可以是一个，也可以是两个，两个的话就是新旧值，一个的话就是新值
+ * 注意 watch观察的值只能是相应式的对象 也即是ref和reactive包裹起来的
  */
 watch(count, (newVal, oldVal) => {
   console.log(newVal, oldVal)
@@ -31,8 +32,7 @@ watch(count, (newVal, oldVal) => {
 </script>
 
 <style scoped>
-
-button{
+button {
   margin: 20px;
   width: 100px;
   height: 50px;
