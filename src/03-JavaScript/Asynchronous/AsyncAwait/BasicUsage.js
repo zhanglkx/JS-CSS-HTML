@@ -43,9 +43,17 @@ async function fn() {
     return new Promise(resolve => {
         setTimeout(() => {
             console.log('fn end')
+            resolve(); //必须添加这段代码 因为Promise被返回了但是没有执行--函数返回了一个 Promise，
+            // 但没有调用 resolve() 或 reject() 来明确解决或拒绝这个 Promise。这意味着 await fn() 将一直等待，因为 Promise 没有完成。
         }, 2000);
     });
 }
+
+// function fn() {
+//     console.log('fn start')
+//     console.log('fn end')
+//     return Promise.reject(1);
+// }
 
 async function run(params) {
     console.log('start');
