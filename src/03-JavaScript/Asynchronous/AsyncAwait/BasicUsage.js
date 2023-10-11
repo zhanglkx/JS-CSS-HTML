@@ -6,10 +6,10 @@
 
 
 /**
- * 
+ *
  * --await+Promise
  * 这是最常见的场景，await 会等待Promise的状态改为fullfilled，如果成功，那么会将async函数剩余任务推入到微任务队列，如果失败，那么剩余任务不会被推入微任务队列执行，它会返回Promise.reject(err)
- * 
+ *
  */
 
 
@@ -18,7 +18,7 @@
  * --await + 普通的值
  * **即使await右边非函数,只是一个普通的数值，但它本质上是将其转化为 Promise.resolve(2),所以会返回一个成功的promise **
  * 因此，当await等待到了成功的结果后，它会将async函数剩余内容推入到微任务队列中等待执行。
- * 
+ *
 * */
 
 // async function run() {
@@ -57,7 +57,7 @@ async function fn() {
 
 async function run(params) {
     console.log('start');
-    const res = await fn();
+    const res = await fn(); //await方法会阻塞后续方法的执行，但是不会阻塞自己的执行
     console.log('end');
 }
 
