@@ -6,7 +6,7 @@ async function async1() {
 
 const async2 = async () => {
     await (async () => {
-        await (() => {
+        await (() => {     //遇到await会发生阻塞，导致await所在区块之后的代码无法执行，此处不会打印4
             console.log(3)
         })()
         console.log(4)
