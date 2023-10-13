@@ -24,6 +24,7 @@
 // async function run() {
 //     console.log('start-1');
 //     const res = await 2;
+//     const res = Promise.resolve(2) 直接执行，不会和await一样等待
 //     console.log(res);
 //     console.log('end');
 // }
