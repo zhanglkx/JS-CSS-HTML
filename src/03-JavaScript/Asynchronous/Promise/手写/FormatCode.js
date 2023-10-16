@@ -16,13 +16,13 @@ class MyPromise {
   }
 
   resolve(val) {
-    if (this.PromiseState === "pending") return;
+    if (this.PromiseState !== "pending") return;
     this.PromiseResult = val;
     this.PromiseState = "fulfilled";
   }
 
   reject(reason) {
-    if (this.PromiseState === "pending") return;
+    if (this.PromiseState !== "pending") return;
     this.PromiseResult = reason;
     this.PromiseState = "reject";
   }
@@ -30,10 +30,11 @@ class MyPromise {
 
 const test1 = new MyPromise((resolve, reject) => {
   resolve("success");
+  reject("fail");
 });
 console.log(test1); // MyPromise { PromiseState: 'fulfilled', PromiseResult: 'success' }
 
-const test2 = new MyPromise((resolve, reject) => {
-  reject("fail");
-});
-console.log(test2); // MyPromise { PromiseState: 'rejected', PromiseResult: 'fail' }
+// const test2 = new MyPromise((resolve, reject) => {
+//   reject("fail");
+// });
+// console.log(test2); // MyPromise { PromiseState: 'rejected', PromiseResult: 'fail' }
