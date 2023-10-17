@@ -43,8 +43,24 @@ const compactObjectFail = function (obj) {
     }
     return obj
 };
-
-
+/**
+ * 精简对象
+ * @param {Object|Array} obj 
+ * @return {Object|Array}
+ */
+const myCompactObject = (obj) => {
+    if (obj instanceof Object) {
+        let res = {};
+        for (const [key, value] of Object.entries(obj)) {
+            if (Boolean(value)) {
+                res[key] = myCompactObject(value);
+            }
+        }
+    }
+    if (obj instanceof Array) {
+        let res = obj.filter(Boolean).map(myCompactObject)
+    }
+}
 
 /**
 * @param {Object|Array} obj
@@ -71,5 +87,5 @@ let arr1 = [null, 0, false, 1];
 let obj = { "a": null, "b": [false, 1] }
 let obj1 = [null, 0, 5, [0], [false, 16]]
 
-let result = compactObject(obj);
+let result = myCompactObject(obj);
 console.log(result);
