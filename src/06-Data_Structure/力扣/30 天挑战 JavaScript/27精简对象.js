@@ -50,25 +50,25 @@ const compactObjectFail = function (obj) {
 * @param {Object|Array} obj
 * @return {Object|Array}
 */
-var compactObject = function(obj) {
+var compactObject = function (obj) {
     if (obj instanceof Array) {
         return obj.filter(Boolean).map(compactObject);
     }
     if (obj instanceof Object) {
         const res = {};
-        for (let [key,value] of Object.entries(obj)) {
-          if (Boolean(value)) {
-            res[key] = compactObject(value);
-          }
+        for (let [key, value] of Object.entries(obj)) {
+            if (Boolean(value)) {
+                res[key] = compactObject(value);
+            }
         }
         return res;
     }
     return obj;
-  };
+};
 
 
 let arr1 = [null, 0, false, 1];
-let obj = {"a": null, "b": [false, 1]}
+let obj = { "a": null, "b": [false, 1] }
 let obj1 = [null, 0, 5, [0], [false, 16]]
 
 let result = compactObject(obj);
