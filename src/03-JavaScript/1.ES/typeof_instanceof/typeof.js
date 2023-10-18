@@ -15,28 +15,28 @@
 let type= '';
 
 type = typeof 1;
-console.log(type);
+console.log(type); //number
 
 type = typeof '1';
-console.log(type);
+console.log(type);   //string
 
 type = typeof true;
-console.log(type);
+console.log(type);   //boolean
 
 type = typeof null;
-console.log(type);
+console.log(type);   //object
 
 type = typeof undefined;
-console.log(type);
+console.log(type);   //undefined
 
 type = typeof Symbol(1);
-console.log(type);
+console.log(type);   //symbol
 
 type = typeof 9007199254740993n;  // 使用n后缀表示BigInt类型 
-console.log(type);
+console.log(type);   //bigint
 
 type = typeof {name:1,age:1};   
-console.log(type);
+console.log(type);   //object
 
 
 function fun(params) {
@@ -44,7 +44,7 @@ function fun(params) {
 }
 
 type = typeof fun;  // 使用n后缀表示BigInt类型 
-console.log(type);
+console.log(type);   //function
 
 
 const  arrowFun = ()=>{
@@ -52,4 +52,10 @@ const  arrowFun = ()=>{
 }
 
 type = typeof arrowFun;
-console.log(type);
+console.log(type);   //function
+
+type = typeof [1,2];
+console.log(type);   //object
+
+type = typeof new Map();
+console.log(type);   //object
